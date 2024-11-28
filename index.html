@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>국립국악원 타악기</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loading-content">
+            <h1 class="logo">국립국악원 타악기</h1>
+            <p class="loading-text">호시미 드럼 패드에 최적화 되어 있습니다.<span class="dots"></span></p>
+        </div>
+    </div>
+
+    <header id="header">
+        <h1>국립국악원 타악기</h1>
+        <p>패드를 눌러 소리를 재생하세요!</p>
+    </header>
+
+    <div id="drum-container">
+        <div class="pad top-left" data-note="49">북</div>
+        <div class="pad top-right" data-note="51">징</div>
+        <div class="pad middle-left" data-note="42">객</div>
+        <div class="pad middle-center" data-note="43">더러러러</div>
+        <div class="pad middle-right" data-note="45">기덕</div>
+        <div class="pad bottom-left" data-note="38">갱</div>
+        <div class="pad bottom-center" data-note="36">쿵</div>
+        <div class="pad bottom-right" data-note="47">덕</div>
+    </div>
+
+    <div id="instruction-toggle">
+        <div id="instruction-button"></div>
+    </div>
+    <div id="instruction-overlay"></div>
+    <div id="instruction-modal">
+        <div class="modal-content">
+            <h2>사용법</h2>
+            <ol>
+                <li>호시미 전자드럼을 USB로 컴퓨터에 연결합니다.</li>
+                <li>웹브라우저에서 미디 컨트롤러 연결 허용을 클릭합니다.</li>
+                <li>패드의 표기된 타악기 이름을 보고 해당 패드를 눌러 연결합니다.</li>
+            </ol>
+            <h3>호시미 패드 없이 사용하기</h3>
+            <p>키보드 자판을 사용하여 연주할 수 있습니다:</p>
+            <ul>
+                <li><b>하단 패드:</b> Z, X, C</li>
+                <li><b>중앙 패드:</b> A, S, D</li>
+                <li><b>상단 패드:</b> Q, E</li>
+            </ul>
+            <button id="close-button">닫기</button>
+        </div>
+    </div>
+
+    <footer id="footer">
+        Powered by <span class="highlight">QLAUDIO</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
