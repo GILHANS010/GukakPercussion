@@ -115,5 +115,62 @@ window.addEventListener('load', () => {
     const loadingScreen = document.getElementById('loading-screen');
     setTimeout(() => {
         loadingScreen.classList.add('hidden');
-    }, 1000); // 3초 후 로딩 화면 사라짐
+    }, 1000); // 1초 후 로딩 화면 사라짐
 });
+
+
+const rhythmPattern = [
+    { notes: [51, 36, 47, 49, 38], delay: 0 },       // 첫 박
+    { notes: [36, 47, 49, 38], delay: 600 },        // 두 번째 박
+    { notes: [36, 47, 49, 38], delay: 1200 },        // 네 번째 박
+    { notes: [42, 47], delay: 1600 },               // 다섯 번째 박
+    { notes: [42, 36, 49], delay: 1800 },           // 여섯 번째 박
+    { notes: [38, 47], delay: 2000 },               // 일곱 번째 박
+];
+
+
+let demoPlaying = false;
+let currentIndex = 0;
+
+// 리듬 데모 재생
+function startRhythmDemo() {
+    if (demoPlaying) return; // 이미 재생 중이면 무시
+    demoPlaying = true;
+    currentIndex = 0; // 시작 인덱스 초기화
+    playNextPattern(); // 첫 패턴 실행
+}
+
+function playNextPattern() {
+    if (!demoPlaying) return; // 재생이 중지된 경우 종료
+
+    const { notes, delay } = rhythmPattern[currentIndex];
+
+    // 다중 노트를 처리
+    notes.forEach((note) => {
+        playSound(note); // 소리 재생
+        highlightPad(note); // 패드 활성화
+    });
+
+    currentIndex++;
+
+    // 패턴의 끝에 도달하면 처음으로 돌아가기
+    if (currentIndex >= rhythmPattern.length) {
+        currentIndex = 0; // 첫 번째 패턴으로 돌아감
+        setTimeout(playNextPattern, 400); // 루프 간 간격 설정
+    } else {
+        // 다음 패턴 호출
+        setTimeout(
+            playNextPattern,
+            (currentIndex < rhythmPattern.length ? rhythmPattern[currentIndex].delay : 0) - delay
+        );
+    }
+}
+
+// 리듬 데모 중지
+function stopRhythmDemo() {
+    demoPlaying = false;
+}
+
+// 이벤트 리스너 추가
+document.getElementById('start-demo').addEventListener('click', startRhythmDemo);
+document.getElementById('stop-demo').addEventListener('click', stopRhythmDemo);

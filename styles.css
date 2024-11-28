@@ -398,3 +398,24 @@ body {
         content: "...";
     }
 }
+
+#demo-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.demo-button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #ff7043;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.demo-button:hover {
+    background-color: #ff5722;
+}
