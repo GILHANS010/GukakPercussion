@@ -50,16 +50,20 @@ function onMIDIMessage(message) {
     console.log(`MIDI Message: status=${status}, note=${note}, velocity=${velocity}`);
 
     if (status === 144 && velocity > 0) {
-        playSound(note);
+        playSound(note, velocity); // velocity 전달
         highlightPad(note);
     }
 }
 
-function playSound(note) {
+function playSound(note, velocity = 127) {
     const soundFile = soundMap[note];
     if (soundFile) {
-        console.log(`Playing sound for note ${note}: ${soundFile}`);
+        console.log(`Playing sound for note ${note}: ${soundFile} with velocity ${velocity}`);
         const audio = new Audio(soundFile);
+
+        // Velocity 값을 0.0 ~ 1.0 범위로 변환하여 소리 크기 조절
+        audio.volume = Math.max(0, Math.min(1, velocity / 127));
+
         audio.play();
     } else {
         console.warn(`No sound mapped for note ${note}`);
@@ -83,12 +87,12 @@ pads.forEach((pad) => {
     });
 });
 
-// 키보드 입력 이벤트 추가
+// 키보드 입력 이벤트에서도 기본 최대 Velocity (127)를 사용
 document.addEventListener('keydown', (event) => {
     const key = event.key.toLowerCase(); // 소문자로 변환
     if (keyboardMap[key]) {
         const note = keyboardMap[key];
-        playSound(note);
+        playSound(note, 100); // 기본 최대 Velocity
         highlightPad(note);
     }
 });
