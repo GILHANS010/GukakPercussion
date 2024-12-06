@@ -1,25 +1,25 @@
 // 사운드 매핑
 const soundMap = {
-    36: 'sounds/janggu_kung.mp3',
-    47: 'sounds/janggu_duck.mp3',
-    42: 'sounds/kkwaenggwari_geck.mp3',
+    37: 'sounds/janggu_kung.mp3',
+    43: 'sounds/janggu_duck.mp3',
+    46: 'sounds/kkwaenggwari_geck.mp3',
     38: 'sounds/kkwaenggwari_gang.mp3',
     45: 'sounds/janggu_giduk.mp3',
-    43: 'sounds/janggu_drrr.mp3',
+    47: 'sounds/janggu_drrr.mp3',
     49: 'sounds/buk.mp3',
     51: 'sounds/jing.mp3',
 };
 
 // 키보드 매핑 (영어 키보드와 한글 자판 대응)
 const keyboardMap = {
-    'z': 38, 'ㅋ': 38, // Z or ㅋ -> Note 38
-    'x': 36, 'ㅌ': 36, // X or ㅌ -> Note 36
-    'c': 47, 'ㅊ': 47, // C or ㅊ -> Note 47
-    'a': 42, 'ㅁ': 42, // A or ㅁ -> Note 42
-    's': 43, 'ㄴ': 43, // S or ㄴ -> Note 43
-    'd': 45, 'ㅇ': 45, // D or ㅇ -> Note 45
-    'q': 49, 'ㅂ': 49, // Q or ㅂ -> Note 49
-    'e': 51, 'ㄷ': 51  // E or ㄷ -> Note 51
+    'z': 38, 'ㅋ': 38,
+    'x': 37, 'ㅌ': 37,
+    'c': 43, 'ㅊ': 43,
+    'a': 46, 'ㅁ': 46,
+    's': 47, 'ㄴ': 47,
+    'd': 45, 'ㅇ': 45,
+    'q': 49, 'ㅂ': 49,
+    'e': 51, 'ㄷ': 51 
 };
 
 
@@ -49,8 +49,8 @@ function onMIDIMessage(message) {
     const [status, note, velocity] = message.data;
     console.log(`MIDI Message: status=${status}, note=${note}, velocity=${velocity}`);
 
-    if (status === 144 && velocity > 0) {
-        playSound(note, velocity); // velocity 전달
+    if ((status & 0xF0) === 0x90 && velocity > 0) {
+        playSound(note, velocity);
         highlightPad(note);
     }
 }
@@ -97,6 +97,15 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
+document.addEventListener('click', () => {
+    // Unlock audio context for some browsers
+    const audio = new Audio();
+    audio.play().catch(() => {
+        console.log('Audio context unlocked');
+    });
+}, { once: true });
+
+
 const instructionModal = document.getElementById('instruction-modal');
 const instructionOverlay = document.getElementById('instruction-overlay');
 const instructionButton = document.getElementById('instruction-button');
@@ -124,12 +133,12 @@ window.addEventListener('load', () => {
 
 
 const rhythmPattern = [
-    { notes: [51, 36, 47, 49, 38], delay: 0 },       // 첫 박
-    { notes: [36, 47, 49, 38], delay: 600 },        // 두 번째 박
-    { notes: [36, 47, 49, 38], delay: 1200 },        // 네 번째 박
+    { notes: [51, 36, 47, 49, 37], delay: 0 },       // 첫 박
+    { notes: [36, 47, 49, 37], delay: 600 },        // 두 번째 박
+    { notes: [36, 47, 49, 37], delay: 1200 },        // 네 번째 박
     { notes: [42, 47], delay: 1600 },               // 다섯 번째 박
     { notes: [42, 36, 49], delay: 1800 },           // 여섯 번째 박
-    { notes: [38, 47], delay: 2000 },               // 일곱 번째 박
+    { notes: [37, 47], delay: 2000 },               // 일곱 번째 박
 ];
 
 
