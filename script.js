@@ -22,6 +22,14 @@ const keyboardMap = {
     'e': 51, 'ㄷ': 51 
 };
 
+const rhythmPattern = [
+    { notes: [51, 37, 43, 49, 38], delay: 0 },       // 첫 박
+    { notes: [37, 43, 49, 38], delay: 600 },        // 두 번째 박
+    { notes: [37, 43, 49, 38], delay: 1200 },        // 네 번째 박
+    { notes: [46, 43], delay: 1600 },               // 다섯 번째 박
+    { notes: [46, 37, 49], delay: 1800 },           // 여섯 번째 박
+    { notes: [38, 43], delay: 2000 },               // 일곱 번째 박
+];
 
 const pads = document.querySelectorAll('.pad');
 
@@ -130,16 +138,6 @@ window.addEventListener('load', () => {
         loadingScreen.classList.add('hidden');
     }, 1000); // 1초 후 로딩 화면 사라짐
 });
-
-
-const rhythmPattern = [
-    { notes: [51, 36, 47, 49, 37], delay: 0 },       // 첫 박
-    { notes: [36, 47, 49, 37], delay: 600 },        // 두 번째 박
-    { notes: [36, 47, 49, 37], delay: 1200 },        // 네 번째 박
-    { notes: [42, 47], delay: 1600 },               // 다섯 번째 박
-    { notes: [42, 36, 49], delay: 1800 },           // 여섯 번째 박
-    { notes: [37, 47], delay: 2000 },               // 일곱 번째 박
-];
 
 
 let demoPlaying = false;
