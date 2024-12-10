@@ -1,14 +1,21 @@
 // 사운드 매핑
 const soundMap = {
+    36: 'sounds/janggu_kung.mp3', //kick pedal
     37: 'sounds/janggu_kung.mp3',
     43: 'sounds/janggu_duck.mp3',
-    46: 'sounds/kkwaenggwari_geck.mp3',
-    38: 'sounds/kkwaenggwari_gang.mp3',
+    42: 'sounds/kkwaenggwari_geck.mp3', //left pedal hat pos
+    44: 'sounds/kkwaenggwari_geck2.mp3', //left pedal
+    46: 'sounds/kkwaenggwari_gang.mp3',
+    38: 'sounds/kkwaenggwari_geck.mp3',
     45: 'sounds/janggu_giduk.mp3',
     47: 'sounds/janggu_drrr.mp3',
     49: 'sounds/buk.mp3',
     51: 'sounds/jing.mp3',
 };
+
+// 42 왼쪽 페달 밝고 있을 때 기존 하이햇 포지션의 미디 노트가 46이 42로 변경
+// 44 좌측 페달 밟는 소리
+// 36 우측 킥 페달 쿵 소리 추가
 
 // 키보드 매핑 (영어 키보드와 한글 자판 대응)
 const keyboardMap = {
