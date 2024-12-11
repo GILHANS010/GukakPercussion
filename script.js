@@ -30,12 +30,12 @@ const keyboardMap = {
 };
 
 const rhythmPattern = [
-    { notes: [51, 37, 43, 49, 38], delay: 0 },       // 첫 박
-    { notes: [37, 43, 49, 38], delay: 600 },        // 두 번째 박
-    { notes: [37, 43, 49, 38], delay: 1200 },        // 네 번째 박
-    { notes: [46, 43], delay: 1600 },               // 다섯 번째 박
-    { notes: [46, 37, 49], delay: 1800 },           // 여섯 번째 박
-    { notes: [38, 43], delay: 2000 },               // 일곱 번째 박
+    { notes: [51, 37, 43, 49, 46], delay: 0 },       // 첫 박
+    { notes: [37, 43, 49, 46], delay: 600 },        // 두 번째 박
+    { notes: [37, 43, 49, 46], delay: 1200 },        // 네 번째 박
+    { notes: [38, 43], delay: 1600 },               // 다섯 번째 박
+    { notes: [38, 37, 49], delay: 1800 },           // 여섯 번째 박
+    { notes: [46, 43], delay: 2000 },               // 일곱 번째 박
 ];
 
 const pads = document.querySelectorAll('.pad');
