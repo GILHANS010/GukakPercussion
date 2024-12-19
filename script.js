@@ -5,10 +5,15 @@ const soundMap = {
         mid: 'sounds/janggu_kung_mid.mp3',
         low: 'sounds/janggu_kung_low.mp3'
     },
-    38: {
+    37: {
         high: 'sounds/janggu_kung_high.mp3',
         mid: 'sounds/janggu_kung_mid.mp3',
         low: 'sounds/janggu_kung_low.mp3'
+    },
+    38: {
+        high: 'sounds/kkwaenggwari_geck_high.mp3',
+        mid: 'sounds/kkwaenggwari_geck_mid.mp3',
+        low: 'sounds/kkwaenggwari_geck_low.mp3'
     },
     43: {
         high: 'sounds/janggu_duck_high.mp3',
@@ -20,7 +25,7 @@ const soundMap = {
         mid: 'sounds/kkwaenggwari_geck_mid.mp3',
         low: 'sounds/kkwaenggwari_geck_low.mp3'
     },
-    44: "sounds/kkwaenggwari_geck2.mp3",
+    44: "sounds/kkwaenggwari_geck_pedal.mp3",
     46: {
         high: 'sounds/kkwaenggwari_gang_high.mp3',
         mid: 'sounds/kkwaenggwari_gang_mid.mp3',
@@ -31,7 +36,7 @@ const soundMap = {
         mid: 'sounds/janggu_giduk_mid.mp3',
         low: 'sounds/janggu_giduk_low.mp3'
     },
-    48: 'sounds/janggu_drrr.mp3', // Single velocity layer
+    47: 'sounds/janggu_drrr.mp3', // Single velocity layer
     49: {
         high: 'sounds/buk_high.mp3',
         mid: 'sounds/buk_mid.mp3',
@@ -43,41 +48,36 @@ const soundMap = {
     }
 };
 
+{/* <div id="drum-container">
+    <div class="pad top-left" data-note="49">북</div>
+    <div class="pad top-right" data-note="51">징</div>
+    <div class="pad middle-left" data-note="46">갱</div>
+    <div class="pad middle-center" data-note="47">더러러러</div>
+    <div class="pad middle-right" data-note="45">기덕</div>
+    <div class="pad bottom-left" data-note="38">객</div>
+    <div class="pad bottom-center" data-note="37">쿵</div>
+    <div class="pad bottom-right" data-note="43">덕</div>
+</div> */}
 
-// <!-- 상단 패드 3개 -->
-// <div class="pad top-left" data-note="49">북</div>
-// <div class="pad top-center" data-note="48">더러러러</div>
-// <div class="pad top-right" data-note="51">징</div>
-
-// <!-- 하단 패드 4개 -->
-// <div class="pad bottom-left" data-note="46">갱</div>
-// <div class="pad bottom-center-left" data-note="38">쿵</div>
-// <div class="pad bottom-center-right" data-note="45">기덕</div>
-// <div class="pad bottom-right" data-note="43">덕</div>
-
-// <!-- 페달 패드 -->
-// <div class="pad pedal-left" data-note="42">왼쪽 페달(객)</div>
-// <div class="pad pedal-right" data-note="36">오른쪽 페달</div>
 
 // 키보드 매핑 (영어 키보드와 한글 자판 대응)
 const keyboardMap = {
-    'z': 42, 'ㅋ': 42,
-    'c': 36, 'ㅊ': 36,
+    'z': 38, 'ㅋ': 38,
+    'x': 37, 'ㅌ': 37,
+    'c': 43, 'ㅊ': 43,
     'a': 46, 'ㅁ': 46,
-    's': 38, 'ㄴ': 38,
+    's': 47, 'ㄴ': 47,
     'd': 45, 'ㅇ': 45,
-    'f': 43, 'ㄹ': 43,
-    'w': 49, 'ㅈ': 49,
-    'e': 48, 'ㄷ': 48,
-    'r': 51, 'ㄱ': 51 
+    'q': 49, 'ㅂ': 49,
+    'e': 51, 'ㄷ': 51 
 };
 
 const rhythmPattern = [
-    { notes: [51, 38, 43, 49, 46], delay: 0 },       // 첫 박
-    { notes: [38, 43, 49, 46], delay: 600 },        // 두 번째 박
-    { notes: [38, 43, 49, 46], delay: 1200 },        // 네 번째 박
-    { notes: [42, 43], delay: 1600 },               // 다섯 번째 박
-    { notes: [42, 38, 49], delay: 1800 },           // 여섯 번째 박
+    { notes: [51, 37, 43, 49, 46], delay: 0 },       // 첫 박
+    { notes: [37, 43, 49, 46], delay: 600 },        // 두 번째 박
+    { notes: [37, 43, 49, 46], delay: 1200 },        // 네 번째 박
+    { notes: [38, 43], delay: 1600 },               // 다섯 번째 박
+    { notes: [38, 37, 49], delay: 1800 },           // 여섯 번째 박
     { notes: [46, 43], delay: 2000 },               // 일곱 번째 박
 ];
 
