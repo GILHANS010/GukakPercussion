@@ -38,13 +38,14 @@ body {
 /* 드럼 패드 컨테이너 */
 #drum-container {
     position: relative;
-    width: 80vw;
-    height: 60vh;
+    width: 80vw; /* Flexible width */
+    height: auto; /* Let content determine height */
+    aspect-ratio: 4 / 3; /* Maintain overall layout ratio */
     max-width: 800px;
     max-height: 600px;
-    background: rgba(255, 255, 255, 0.2); /* 투명한 배경 */
-    backdrop-filter: blur(10px); /* 유리 효과 */
-    border-radius: 20px; /* 둥근 모서리 */
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
     box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
@@ -54,12 +55,12 @@ body {
 /* 패드 공통 스타일 */
 .pad {
     position: absolute;
-    width: 18%;
-    height: 23%;
-    background: rgba(255, 255, 255, 0.25); /* 반투명 배경 */
+    width: 18%; /* Adjust to desired size */
+    aspect-ratio: 1 / 1; /* Ensures a perfect circle */
+    background: rgba(255, 255, 255, 0.25); /* Semi-transparent background */
     border: 2px solid rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
-    backdrop-filter: blur(5px); /* 패드에 Glass 효과 */
+    border-radius: 50%; /* Makes it a circle */
+    backdrop-filter: blur(5px); /* Glass effect */
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3), inset 0 -4px 10px rgba(255, 255, 255, 0.2);
     cursor: pointer;
     transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.2s ease;
@@ -72,6 +73,7 @@ body {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
+
 
 /* 페달 패드 스타일 */
 .pedal-left,
@@ -420,14 +422,15 @@ body {
     }
 
     .pad {
-        width: 14%;
-        height: 14%;
+        width: 14%; /* Adjust size */
+        aspect-ratio: 1 / 1; /* Maintain circle shape */
     }
 
     .pedal-left,
     .pedal-right {
         width: 11%;
-        height: 7%;
+        height: auto; /* Let aspect-ratio control height */
+        aspect-ratio: 1 / 1;
     }
 
     #header h1 {
