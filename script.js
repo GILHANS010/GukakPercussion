@@ -1,17 +1,48 @@
 // 사운드 매핑
 const soundMap = {
-    36: 'sounds/janggu_kung.mp3', //kick pedal
-    38: 'sounds/janggu_kung.mp3',
-    43: 'sounds/janggu_duck.mp3',
-    42: 'sounds/kkwaenggwari_geck.mp3', //left pedal hat pos
-    44: 'sounds/kkwaenggwari_geck2.mp3', //left pedal
-    46: 'sounds/kkwaenggwari_gang.mp3',
-    // 38: 'sounds/kkwaenggwari_geck.mp3',
-    45: 'sounds/janggu_giduk.mp3',
-    48: 'sounds/janggu_drrr.mp3',
-    49: 'sounds/buk.mp3',
-    51: 'sounds/jing.mp3',
+    36: {
+        high: 'sounds/janggu_kung_high.mp3',
+        mid: 'sounds/janggu_kung_mid.mp3',
+        low: 'sounds/janggu_kung_low.mp3'
+    },
+    38: {
+        high: 'sounds/janggu_kung_high.mp3',
+        mid: 'sounds/janggu_kung_mid.mp3',
+        low: 'sounds/janggu_kung_low.mp3'
+    },
+    43: {
+        high: 'sounds/janggu_duck_high.mp3',
+        mid: 'sounds/janggu_duck_mid.mp3',
+        low: 'sounds/janggu_duck_low.mp3'
+    },
+    42: {
+        high: 'sounds/kkwaenggwari_geck_high.mp3',
+        mid: 'sounds/kkwaenggwari_geck_mid.mp3',
+        low: 'sounds/kkwaenggwari_geck_low.mp3'
+    },
+    44: "sounds/kkwaenggwari_geck2.mp3",
+    46: {
+        high: 'sounds/kkwaenggwari_gang_high.mp3',
+        mid: 'sounds/kkwaenggwari_gang_mid.mp3',
+        low: 'sounds/kkwaenggwari_gang_low.mp3'
+    },
+    45: {
+        high: 'sounds/janggu_giduk_high.mp3',
+        mid: 'sounds/janggu_giduk_mid.mp3',
+        low: 'sounds/janggu_giduk_low.mp3'
+    },
+    48: 'sounds/janggu_drrr.mp3', // Single velocity layer
+    49: {
+        high: 'sounds/buk_high.mp3',
+        mid: 'sounds/buk_mid.mp3',
+        low: 'sounds/buk_low.mp3'
+    },
+    51: {
+        high: 'sounds/jing_high.mp3',
+        low: 'sounds/jing_low.mp3' // Two velocity layers only
+    }
 };
+
 
 // <!-- 상단 패드 3개 -->
 // <div class="pad top-left" data-note="49">북</div>
@@ -85,19 +116,39 @@ function onMIDIMessage(message) {
 }
 
 function playSound(note, velocity = 127) {
-    const soundFile = soundMap[note];
-    if (soundFile) {
-        console.log(`Playing sound for note ${note}: ${soundFile} with velocity ${velocity}`);
-        const audio = new Audio(soundFile);
+    const soundLayers = soundMap[note];
 
-        // Velocity 값을 0.0 ~ 1.0 범위로 변환하여 소리 크기 조절
+    if (typeof soundLayers === 'string') {
+        // Single velocity layer sound
+        const audio = new Audio(soundLayers);
         audio.volume = Math.max(0, Math.min(1, velocity / 127));
-
         audio.play();
+    } else if (soundLayers) {
+        // Determine the correct velocity layer
+        let soundFile;
+        if (velocity > 100 && soundLayers.high) {
+            soundFile = soundLayers.high;
+        } else if (velocity > 50 && soundLayers.mid) {
+            soundFile = soundLayers.mid;
+        } else if (soundLayers.low) {
+            soundFile = soundLayers.low;
+        } else {
+            // Fallback to any available layer
+            soundFile = soundLayers.high || soundLayers.low || soundLayers.mid;
+        }
+
+        if (soundFile) {
+            const audio = new Audio(soundFile);
+            audio.volume = Math.max(0, Math.min(1, velocity / 127));
+            audio.play();
+        } else {
+            console.warn(`No sound file for velocity layer: note ${note}, velocity ${velocity}`);
+        }
     } else {
         console.warn(`No sound mapped for note ${note}`);
     }
 }
+
 
 function highlightPad(note) {
     const pad = document.querySelector(`.pad[data-note="${note}"]`);
