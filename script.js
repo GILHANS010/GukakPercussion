@@ -13,20 +13,32 @@ const soundMap = {
     51: 'sounds/jing.mp3',
 };
 
-// 42 왼쪽 페달 밝고 있을 때 기존 하이햇 포지션의 미디 노트가 46이 42로 변경
-// 44 좌측 페달 밟는 소리
-// 36 우측 킥 페달 쿵 소리 추가
+// <!-- 상단 패드 3개 -->
+// <div class="pad top-left" data-note="49">북</div>
+// <div class="pad top-center" data-note="48">더러러러</div>
+// <div class="pad top-right" data-note="51">징</div>
+
+// <!-- 하단 패드 4개 -->
+// <div class="pad bottom-left" data-note="46">갱</div>
+// <div class="pad bottom-center-left" data-note="38">쿵</div>
+// <div class="pad bottom-center-right" data-note="45">기덕</div>
+// <div class="pad bottom-right" data-note="43">덕</div>
+
+// <!-- 페달 패드 -->
+// <div class="pad pedal-left" data-note="42">왼쪽 페달(객)</div>
+// <div class="pad pedal-right" data-note="36">오른쪽 페달</div>
 
 // 키보드 매핑 (영어 키보드와 한글 자판 대응)
 const keyboardMap = {
-    'z': 38, 'ㅋ': 38,
-    'x': 37, 'ㅌ': 37,
-    'c': 43, 'ㅊ': 43,
+    'z': 42, 'ㅋ': 42,
+    'c': 36, 'ㅊ': 36,
     'a': 46, 'ㅁ': 46,
-    's': 48, 'ㄴ': 48,
+    's': 38, 'ㄴ': 38,
     'd': 45, 'ㅇ': 45,
-    'q': 49, 'ㅂ': 49,
-    'e': 51, 'ㄷ': 51 
+    'f': 43, 'ㄹ': 43,
+    'w': 49, 'ㅈ': 49,
+    'e': 48, 'ㄷ': 48,
+    'r': 51, 'ㄱ': 51 
 };
 
 const rhythmPattern = [
