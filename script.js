@@ -1,14 +1,14 @@
 // 사운드 매핑
 const soundMap = {
     36: 'sounds/janggu_kung.mp3', //kick pedal
-    37: 'sounds/janggu_kung.mp3',
+    38: 'sounds/janggu_kung.mp3',
     43: 'sounds/janggu_duck.mp3',
     42: 'sounds/kkwaenggwari_geck.mp3', //left pedal hat pos
     44: 'sounds/kkwaenggwari_geck2.mp3', //left pedal
     46: 'sounds/kkwaenggwari_gang.mp3',
-    38: 'sounds/kkwaenggwari_geck.mp3',
+    // 38: 'sounds/kkwaenggwari_geck.mp3',
     45: 'sounds/janggu_giduk.mp3',
-    47: 'sounds/janggu_drrr.mp3',
+    48: 'sounds/janggu_drrr.mp3',
     49: 'sounds/buk.mp3',
     51: 'sounds/jing.mp3',
 };
@@ -23,18 +23,18 @@ const keyboardMap = {
     'x': 37, 'ㅌ': 37,
     'c': 43, 'ㅊ': 43,
     'a': 46, 'ㅁ': 46,
-    's': 47, 'ㄴ': 47,
+    's': 48, 'ㄴ': 48,
     'd': 45, 'ㅇ': 45,
     'q': 49, 'ㅂ': 49,
     'e': 51, 'ㄷ': 51 
 };
 
 const rhythmPattern = [
-    { notes: [51, 37, 43, 49, 46], delay: 0 },       // 첫 박
-    { notes: [37, 43, 49, 46], delay: 600 },        // 두 번째 박
-    { notes: [37, 43, 49, 46], delay: 1200 },        // 네 번째 박
-    { notes: [38, 43], delay: 1600 },               // 다섯 번째 박
-    { notes: [38, 37, 49], delay: 1800 },           // 여섯 번째 박
+    { notes: [51, 38, 43, 49, 46], delay: 0 },       // 첫 박
+    { notes: [38, 43, 49, 46], delay: 600 },        // 두 번째 박
+    { notes: [38, 43, 49, 46], delay: 1200 },        // 네 번째 박
+    { notes: [42, 43], delay: 1600 },               // 다섯 번째 박
+    { notes: [42, 38, 49], delay: 1800 },           // 여섯 번째 박
     { notes: [46, 43], delay: 2000 },               // 일곱 번째 박
 ];
 
@@ -49,12 +49,14 @@ if (navigator.requestMIDIAccess) {
 function onMIDISuccess(midiAccess) {
     const inputs = midiAccess.inputs;
 
+    console.log('MIDI Access Successful');
+    console.log(`Connected MIDI Inputs (${inputs.size}):`);
     inputs.forEach(function (input) {
+        console.log(`- ${input.name}`);
         input.onmidimessage = onMIDIMessage;
     });
-
-    console.log('MIDI Access Successful');
 }
+
 
 function onMIDIFailure() {
     console.error('MIDI Access Failed');
