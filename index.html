@@ -1,76 +1,81 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>국립국악원 타악기</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>국립국악원 타악기</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="loading-screen">
-        <div class="loading-content">
-            <h1 class="logo">국립국악원 타악기</h1>
-            <p class="loading-text">호시미 드럼 패드에 최적화 되어 있습니다.<span class="dots"></span></p>
-        </div>
+  <!-- 로딩 화면 -->
+  <div id="loading-screen">
+    <div class="loading-content">
+      <h1 class="logo">국립국악원 타악기</h1>
+      <p class="loading-text">호시미 드럼 패드에 최적화 되어 있습니다.<span class="dots"></span></p>
     </div>
+  </div>
 
-    <header id="header">
-        <h1>국립국악원 타악기</h1>
-        <p>패드를 눌러 소리를 재생하세요!</p>
-    </header>
+  <!-- 헤더 -->
+  <header id="header">
+    <h1 id="header-title">국립국악원 타악기</h1>
+    <p id="header-subtitle">패드를 눌러 소리를 재생하세요!</p>
+    <!-- ★ 언어 토글 버튼(우측 상단) -->
+  </header>
 
-    <!-- (기존 select를 없애고, 라디오 버튼으로 키트 선택) -->
-    <section id="kit-selector" class="kit-radio-wrapper">
-      <!-- 사물놀이 라디오 -->
-      <input type="radio" name="kitOption" id="kit-samul" value="samul" checked>
-      <label for="kit-samul" class="kit-card">사물놀이 키트</label>
-      
-      <!-- 장단 라디오 -->
-      <input type="radio" name="kitOption" id="kit-jangdan" value="jangdan">
-      <label for="kit-jangdan" class="kit-card">장단 키트</label>
-    </section>
-    <!-- /키트 선택 -->
+  <button id="lang-toggle">English</button>
 
-    <!-- 실제 패드들이 들어갈 컨테이너 -->
-    <div id="drum-container">
-        <!-- 초기 상태는 사물놀이 키트 기준으로 표시. (JS에서 재갱신됨) -->
-        <div class="pad top-left" data-note="49">북(강)</div>
-        <div class="pad top-right" data-note="51">징</div>
-        <div class="pad middle-left" data-note="46">북(약)</div>
-        <div class="pad middle-center" data-note="47">꽹과리(객)</div>
-        <div class="pad middle-right" data-note="45">꽹과리(갱)</div>
-        <div class="pad bottom-left" data-note="38">장구쿵(L)</div>
-        <div class="pad bottom-center" data-note="37">장구쿵(R)</div>
-        <div class="pad bottom-right" data-note="43">장구 덕</div>
+  <!-- 키트 선택 (사물놀이/장단) -->
+  <section id="kit-selector" class="kit-radio-wrapper">
+    <input type="radio" name="kitOption" id="kit-samul" value="samul" checked>
+    <label for="kit-samul" class="kit-card" id="samul-label">사물놀이 키트</label>
+    
+    <input type="radio" name="kitOption" id="kit-jangdan" value="jangdan">
+    <label for="kit-jangdan" class="kit-card" id="jangdan-label">장단 키트</label>
+  </section>
+
+  <!-- 드럼 패드 컨테이너 -->
+  <div id="drum-container">
+    <!-- 초기(사물놀이 키트) -->
+    <div class="pad top-left" data-note="49">북(강)</div>
+    <div class="pad top-right" data-note="51">징</div>
+    <div class="pad middle-left" data-note="46">북(약)</div>
+    <div class="pad middle-center" data-note="47">꽹과리(객)</div>
+    <div class="pad middle-right" data-note="45">꽹과리(갱)</div>
+    <div class="pad bottom-left" data-note="38">장구쿵(L)</div>
+    <div class="pad bottom-center" data-note="37">장구쿵(R)</div>
+    <div class="pad bottom-right" data-note="43">장구 덕</div>
+  </div>
+
+  <!-- 사용법 모달 관련 -->
+  <div id="instruction-toggle">
+    <div id="instruction-button"></div>
+  </div>
+  <div id="instruction-overlay"></div>
+  <div id="instruction-modal">
+    <div class="modal-content">
+      <h2 id="modal-title">사용법</h2>
+      <ol id="modal-steps">
+        <li>호시미 전자드럼을 USB로 컴퓨터에 연결합니다.</li>
+        <li>웹브라우저에서 미디 컨트롤러 연결 허용을 클릭합니다.</li>
+        <li>패드의 표기된 타악기 이름을 보고 해당 패드를 눌러 연결합니다.</li>
+      </ol>
+      <h3 id="modal-subtitle">호시미 패드 없이 사용하기</h3>
+      <p id="modal-text">키보드 자판을 사용하여 연주할 수 있습니다:</p>
+      <ul id="modal-keyboard-list">
+        <li><b>하단 패드:</b> Z, X, C</li>
+        <li><b>중앙 패드:</b> A, S, D</li>
+        <li><b>상단 패드:</b> Q, E</li>
+      </ul>
+      <button id="close-button">닫기</button>
     </div>
+  </div>
 
-    <div id="instruction-toggle">
-        <div id="instruction-button"></div>
-    </div>
-    <div id="instruction-overlay"></div>
-    <div id="instruction-modal">
-        <div class="modal-content">
-            <h2>사용법</h2>
-            <ol>
-                <li>호시미 전자드럼을 USB로 컴퓨터에 연결합니다.</li>
-                <li>웹브라우저에서 미디 컨트롤러 연결 허용을 클릭합니다.</li>
-                <li>패드의 표기된 타악기 이름을 보고 해당 패드를 눌러 연결합니다.</li>
-            </ol>
-            <h3>호시미 패드 없이 사용하기</h3>
-            <p>키보드 자판을 사용하여 연주할 수 있습니다:</p>
-            <ul>
-                <li><b>하단 패드:</b> Z, X, C</li>
-                <li><b>중앙 패드:</b> A, S, D</li>
-                <li><b>상단 패드:</b> Q, E</li>
-            </ul>
-            <button id="close-button">닫기</button>
-        </div>
-    </div>
+  <!-- 푸터 -->
+  <footer id="footer">
+    Powered by <span class="highlight">QLAUDIO</span>
+  </footer>
 
-    <footer id="footer">
-        Powered by <span class="highlight">QLAUDIO</span>
-    </footer>
-    <!-- 자바스크립트 파일 -->
-    <script src="script.js"></script>
+  <script src="script.js"></script>
+
 </body>
 </html>

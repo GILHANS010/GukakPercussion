@@ -1,50 +1,72 @@
-# GukakPercussion
+# Gugak Percussion MIDI Mapping
 
-# 국립국악원 타악기 웹 애플리케이션 데모 프로젝트
+This repository contains a set of **traditional Korean percussion instruments** (Samulnori and Jangdan) mapped to **specific MIDI note numbers**, along with **audio samples** for each note. Below is a detailed overview of the mappings, designed so you can quickly integrate the sounds into a MIDI-based environment or instrument.
 
-## 프로젝트 개요
-이 프로젝트는 **국립국악원**의 의뢰를 받아 **호시미**와 클라우디오(QLAUDIO)가 합작하여 전통 국악기를 전자 타악기 형태로 구현하고자 진행한 웹 애플리케이션의 데모 프로젝트입니다.  
-전통 국악기의 아름다움과 다양성을 전자화된 인터페이스로 표현하며, 누구나 쉽게 국악기를 체험할 수 있도록 제작되었습니다.
-
----
-
-## 주요 기능
-
-- **드럼 패드 인터페이스**:  
-  웹 상에서 사용자가 패드 형태의 UI를 통해 국악기를 연주할 수 있습니다.
-  - 클릭을 통해 패드에서 소리를 출력
-  - MIDI 컨트롤러 연결 지원
-  - 키보드 자판(Z, X, C 등)을 활용한 연주 가능
-
-- **사용자 인터페이스**:  
-  직관적이고 사용자 친화적인 UI로 국악기의 특징을 살렸습니다.
-  - 카드 형식으로 악기 정보를 제공
-  - "사용법" 섹션에서 상세한 설명과 키보드 매핑 안내
-
-- **반응형 디자인**:  
-  다양한 화면 크기(데스크톱, 태블릿, 모바일)에 맞게 UI가 조정됩니다.
+> **Live Demo**  
+> For a hands-on demonstration, visit **[GukakPercussion](https://gilhans010.github.io/GukakPercussion/)**.  
+> You can switch to English labels by clicking the “English” button in the top-right corner.
 
 ---
 
-## 기술 스택
+## File Structure
+.
+├── index.html
+├── script.js
+├── styles.css
+└── sounds/
+    ├── samul/
+    │   ├── buk_samul_hard_high.wav
+    │   ├── ...
+    └── jangdan/
+        ├── buk_jangdan_lefthand_high.wav
+        ├── ...
+All .wav files are placed under sounds/samul/ and sounds/jangdan/. Each file corresponds to a particular instrument stroke (e.g., a “hard” Buk hit, or a “get” Kkwaenggwari stroke).
 
-- **Frontend**:
-  - HTML5
-  - CSS3
-  - JavaScript (Vanilla JS)
-  - Responsive Design 적용
+MIDI Note Mappings
+Below are the eight pads used in both kits. Each pad corresponds to the same MIDI note numbers but references different audio files depending on the kit (Samulnori vs. Jangdan).
 
-- **사운드**:
-  - 각 국악기 소리 샘플을 `Audio` 객체를 사용해 출력
-  - MIDI 장치와의 연동(Web MIDI API)
+### Samulnori Kit
 
----
+| Pad Position   | MIDI Note | Sound File                                      | Description               |
+|---------------|----------:|------------------------------------------------|---------------------------|
+| Top-Left      | 49        | sounds/samul/buk_samul_hard_high.wav          | Buk (hard stroke)         |
+| Top-Right     | 51        | sounds/samul/jing_samul_high.wav              | Jing                      |
+| Middle-Left   | 46        | sounds/samul/buk_samul_soft_high.wav          | Buk (soft stroke)         |
+| Middle-Center | 47        | sounds/samul/kkwaenggwari_samul_get_high.wav  | Kkwaeng (“get” stroke)    |
+| Middle-Right  | 45        | sounds/samul/kkwaenggwari_samul_gang_high.wav | Kkwaeng (“gang” stroke)   |
+| Bottom-Left   | 38        | sounds/samul/janggu_samul_kung_high.wav       | Janggu (left-hand “kung”) |
+| Bottom-Center | 37        | sounds/samul/janggu_samul_rightkung_high.wav  | Janggu (right-hand “kung”)|
+| Bottom-Right  | 43        | sounds/samul/janggu_samul_duk_high.wav        | Janggu (“duk”)            |
 
-## 주요 국악기
 
-- **북**: 깊고 묵직한 리듬을 제공
-- **징**: 강렬하고 장엄한 사운드
-- **꽹과리**: 밝고 강렬한 시원한 사운드
-- **장구**: 신명나는 소리를 통한 역동성
+### Jangdan Kit
 
----\
+| Pad Position   | MIDI Note | Sound File                                        | Description                |
+|---------------|----------:|----------------------------------------------------|----------------------------|
+| Top-Left      | 49        | sounds/jangdan/buk_jangdan_lefthand_high.wav      | Buk (left-hand stroke)     |
+| Top-Right     | 51        | sounds/jangdan/janggu_jangdan_byunjuk_high.wav    | Janggu (“byunjuk” stroke)  |
+| Middle-Left   | 46        | sounds/jangdan/buk_jangdan_righthand_high.wav     | Buk (right-hand stroke)    |
+| Middle-Center | 47        | sounds/jangdan/buk_jangdan_ddak_high.wav          | Buk (“ddak” stroke)        |
+| Middle-Right  | 45        | sounds/jangdan/janggu_jangdan_drrr_high.wav       | Janggu (“drrr” roll)       |
+| Bottom-Left   | 38        | sounds/jangdan/janggu_jangdan_kung_high.wav       | Janggu (“kung”)            |
+| Bottom-Center | 37        | sounds/jangdan/janggu_jangdan_duk_high.wav        | Janggu (“duk”)             |
+| Bottom-Right  | 43        | sounds/jangdan/janggu_jangdan_giduk_high.wav      | Janggu (“giduk”)           |
+
+
+Velocity Layers
+Each note can potentially use different velocity layers: high, mid, and low.
+In the current example, only the high layer is used (e.g., buk_samul_hard_high.wav).
+If you have additional recordings for softer or louder strokes, simply place them in the same folder and adjust the code to switch between _low.wav, _mid.wav, and _high.wav based on the MIDI velocity.
+How to Use These Files
+Download the Sounds
+
+Copy or download the contents of the sounds/ folder (both samul and jangdan subfolders).
+Assign or Trigger via MIDI
+
+Each of the above MIDI notes (49, 51, 46, 47, 45, 38, 37, 43) maps directly to the .wav files shown in the tables.
+You can adapt these samples for your own MIDI percussion instrument, hardware, or software plugin.
+Online Demo
+
+For a quick reference or test, open the demo page in your web browser.
+Choose Samulnori or Jangdan kit, then tap the pads or press the corresponding MIDI notes to hear the sounds.
+Switch to English mode in the top-right corner for English labels.
