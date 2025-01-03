@@ -115,26 +115,99 @@ document.getElementById('lang-toggle').addEventListener('click', () => {
  **************************************************************/
 const soundMap = {
   samul: {
-    49: { high: 'sounds/samul/buk_samul_hard_high.wav' },
-    51: { high: 'sounds/samul/jing_samul_high.wav' },
-    46: { high: 'sounds/samul/buk_samul_soft_high.wav' },
-    47: { high: 'sounds/samul/kkwaenggwari_samul_get_high.wav' },
-    45: { high: 'sounds/samul/kkwaenggwari_samul_gang_high.wav' },
-    38: { high: 'sounds/samul/janggu_samul_kung_high.wav' },
-    37: { high: 'sounds/samul/janggu_samul_rightkung_high.wav' },
-    43: { high: 'sounds/samul/janggu_samul_duk_high.wav' }
+    49: {
+      high: 'sounds/samul/buk_samul_hard_high.wav',
+      mid: 'sounds/samul/buk_samul_hard_mid.wav',
+      low: 'sounds/samul/buk_samul_hard_low.wav'
+    },
+    51: {
+      high: 'sounds/samul/jing_samul_high.wav',
+      mid: 'sounds/samul/jing_samul_mid.wav',
+      low: 'sounds/samul/jing_samul_low.wav',
+    },
+    46: {
+      high: 'sounds/samul/buk_samul_soft_high.wav',
+      mid: 'sounds/samul/buk_samul_soft_mid.wav',
+      low: 'sounds/samul/buk_samul_soft_low.wav',
+    },
+    47: {
+      high: 'sounds/samul/kkwaenggwari_samul_get_high.wav',
+      mid: 'sounds/samul/kkwaenggwari_samul_get_mid.wav',
+      low: 'sounds/samul/kkwaenggwari_samul_get_low.wav',
+    },
+    45: {
+      high: 'sounds/samul/kkwaenggwari_samul_gang_high.wav',
+      mid: 'sounds/samul/kkwaenggwari_samul_gang_mid.wav',
+      low: 'sounds/samul/kkwaenggwari_samul_gang_low.wav'
+    },
+    38: {
+      high: 'sounds/samul/janggu_samul_kung_high.wav',
+      mid: 'sounds/samul/janggu_samul_kung_mid.wav',
+      low: 'sounds/samul/janggu_samul_kung_low.wav'
+    },
+    37: {
+      high: 'sounds/samul/janggu_samul_rightkung_high.wav',
+      mid: 'sounds/samul/janggu_samul_rightkung_mid.wav',
+      low: 'sounds/samul/janggu_samul_rightkung_low.wav'
+    },
+    43: {
+      high: 'sounds/samul/janggu_samul_duk_high.wav',
+      mid: 'sounds/samul/janggu_samul_duk_mid.wav',
+      low: 'sounds/samul/janggu_samul_duk_low.wav'
+    }
   },
+
   jangdan: {
-    49: { high: 'sounds/jangdan/buk_jangdan_lefthand_high.wav' },
-    51: { high: 'sounds/jangdan/janggu_jangdan_byunjuk_high.wav' },
-    46: { high: 'sounds/jangdan/buk_jangdan_righthand_high.wav' },
-    47: { high: 'sounds/jangdan/buk_jangdan_ddak_high.wav' },
-    45: { high: 'sounds/jangdan/janggu_jangdan_drrr_high.wav' },
-    38: { high: 'sounds/jangdan/janggu_jangdan_kung_high.wav' },
-    37: { high: 'sounds/jangdan/janggu_jangdan_duk_high.wav' },
-    43: { high: 'sounds/jangdan/janggu_jangdan_giduk_high.wav' }
+    49: {
+      high: 'sounds/jangdan/buk_jangdan_lefthand_high.wav',
+      mid: 'sounds/jangdan/buk_jangdan_lefthand_mid.wav',
+      low: 'sounds/jangdan/buk_jangdan_lefthand_low.wav'
+    },
+    51: {
+      high: 'sounds/jangdan/janggu_jangdan_byunjuk_high.wav',
+      mid: 'sounds/jangdan/janggu_jangdan_byunjuk_mid.wav',
+      low: 'sounds/jangdan/janggu_jangdan_byunjuk_low.wav'
+    },
+    46: {
+      high: 'sounds/jangdan/buk_jangdan_righthand_high.wav',
+      mid: 'sounds/jangdan/buk_jangdan_righthand_mid.wav',
+      low: 'sounds/jangdan/buk_jangdan_righthand_low.wav'
+    },
+    47: {
+      high: 'sounds/jangdan/buk_jangdan_ddak_high.wav',
+      mid: 'sounds/jangdan/buk_jangdan_ddak_mid.wav',
+      low: 'sounds/jangdan/buk_jangdan_ddak_low.wav'
+    },
+    45: {
+      high: 'sounds/jangdan/janggu_jangdan_drrr_high.wav',
+      mid: 'sounds/jangdan/janggu_jangdan_drrr_mid.wav',
+      low: 'sounds/jangdan/janggu_jangdan_drrr_low.wav'
+    },
+    38: {
+      high: 'sounds/jangdan/janggu_jangdan_kung_high.wav',
+      mid: 'sounds/jangdan/janggu_jangdan_kung_mid.wav',
+      low: 'sounds/jangdan/janggu_jangdan_kung_low.wav'
+    },
+    37: {
+      high: 'sounds/jangdan/janggu_jangdan_duk_high.wav',
+      mid: 'sounds/jangdan/janggu_jangdan_duk_mid.wav',
+      low: 'sounds/jangdan/janggu_jangdan_duk_low.wav'
+    },
+    43: {
+      high: 'sounds/jangdan/janggu_jangdan_giduk_high.wav',
+      mid: 'sounds/jangdan/janggu_jangdan_giduk_mid.wav',
+      low: 'sounds/jangdan/janggu_jangdan_giduk_low.wav'
+    }
   }
-};
+  
+  };
+
+  // Velocity Layer 예시
+  // 46: {
+  //   high: 'sounds/jangdan/gaeng_high.mp3',
+  //   mid:  'sounds/jangdan/gaeng_mid.mp3',
+  //   low:  'sounds/jangdan/gaeng_low.mp3'
+  // },
 
 let currentKit = 'samul'; // 현재 선택된 키트
 
@@ -243,9 +316,9 @@ function playSound(note, velocity = 127) {
   // let soundFile = soundLayers.mid;
   let soundFile;
   if (velocity < 50) {
-    soundFile = soundLayers.soft;
+    soundFile = soundLayers.low;
   } else if (velocity < 100) {
-    soundFile = soundLayers.medium;
+    soundFile = soundLayers.mid;
   } else {
     soundFile = soundLayers.high;
   }
