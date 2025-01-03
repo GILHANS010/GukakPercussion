@@ -19,26 +19,33 @@
         <p>패드를 눌러 소리를 재생하세요!</p>
     </header>
 
-    <div id="demo-section">
-        <button id="start-demo" class="demo-button">리듬 데모 시작</button>
-        <button id="stop-demo" class="demo-button">리듬 데모 멈춤</button>
-    </div>
+    <!-- (기존 select를 없애고, 라디오 버튼으로 키트 선택) -->
+    <section id="kit-selector" class="kit-radio-wrapper">
+      <!-- 사물놀이 라디오 -->
+      <input type="radio" name="kitOption" id="kit-samul" value="samul" checked>
+      <label for="kit-samul" class="kit-card">사물놀이 키트</label>
+      
+      <!-- 장단 라디오 -->
+      <input type="radio" name="kitOption" id="kit-jangdan" value="jangdan">
+      <label for="kit-jangdan" class="kit-card">장단 키트</label>
+    </section>
+    <!-- /키트 선택 -->
 
+    <!-- 실제 패드들이 들어갈 컨테이너 -->
     <div id="drum-container">
-        <div class="pad top-left" data-note="49">북</div>
+        <!-- 초기 상태는 사물놀이 키트 기준으로 표시. (JS에서 재갱신됨) -->
+        <div class="pad top-left" data-note="49">북(강)</div>
         <div class="pad top-right" data-note="51">징</div>
-        <div class="pad middle-left" data-note="46">갱</div>
-        <div class="pad middle-center" data-note="47">더러러러</div>
-        <div class="pad middle-right" data-note="45">기덕</div>
-        <div class="pad bottom-left" data-note="38">객</div>
-        <div class="pad bottom-center" data-note="37">쿵</div>
-        <div class="pad bottom-right" data-note="43">덕</div>
+        <div class="pad middle-left" data-note="46">북(약)</div>
+        <div class="pad middle-center" data-note="47">꽹과리(객)</div>
+        <div class="pad middle-right" data-note="45">꽹과리(갱)</div>
+        <div class="pad bottom-left" data-note="38">장구쿵(L)</div>
+        <div class="pad bottom-center" data-note="37">장구쿵(R)</div>
+        <div class="pad bottom-right" data-note="43">장구 덕</div>
     </div>
 
     <div id="instruction-toggle">
         <div id="instruction-button"></div>
-
-
     </div>
     <div id="instruction-overlay"></div>
     <div id="instruction-modal">
@@ -55,7 +62,6 @@
                 <li><b>하단 패드:</b> Z, X, C</li>
                 <li><b>중앙 패드:</b> A, S, D</li>
                 <li><b>상단 패드:</b> Q, E</li>
-
             </ul>
             <button id="close-button">닫기</button>
         </div>
@@ -64,7 +70,7 @@
     <footer id="footer">
         Powered by <span class="highlight">QLAUDIO</span>
     </footer>
-
+    <!-- 자바스크립트 파일 -->
     <script src="script.js"></script>
 </body>
 </html>
