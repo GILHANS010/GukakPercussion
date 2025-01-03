@@ -10,18 +10,6 @@ This repository contains a set of **traditional Korean percussion instruments** 
 
 ## File Structure
 
-```plaintext
-.
-├── index.html
-├── script.js
-├── styles.css
-└── sounds/
-    ├── samul/
-    │   ├── buk_samul_hard_high.wav
-    │   ├── ...
-    └── jangdan/
-        ├── buk_jangdan_lefthand_high.wav
-        ├── ...
 All .wav files are placed under sounds/samul/ and sounds/jangdan/. Each file corresponds to a particular instrument stroke (e.g., a “hard” Buk hit, or a “get” Kkwaenggwari stroke).
 
 MIDI Note Mappings
