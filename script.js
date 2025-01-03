@@ -240,7 +240,16 @@ function playSound(note, velocity = 127) {
     return;
   }
   // velocity 레이어링 예시
-  let soundFile = soundLayers.high; // 여기선 high만 예시
+  // let soundFile = soundLayers.mid;
+  let soundFile;
+  if (velocity < 50) {
+    soundFile = soundLayers.soft;
+  } else if (velocity < 100) {
+    soundFile = soundLayers.medium;
+  } else {
+    soundFile = soundLayers.high;
+  }
+
   if (soundFile) {
     const audio = new Audio(soundFile);
     audio.volume = Math.max(0, Math.min(1, velocity / 127));
