@@ -9,6 +9,8 @@ This repository contains a set of **traditional Korean percussion instruments** 
 ---
 
 ## File Structure
+
+```plaintext
 .
 ├── index.html
 ├── script.js
