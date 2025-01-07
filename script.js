@@ -131,9 +131,9 @@ const soundMap = {
       low: 'sounds/samul/buk_samul_soft_low.wav',
     },
     47: {
-      high: 'sounds/samul/kkwaenggwari_samul_get_high.wav',
-      mid: 'sounds/samul/kkwaenggwari_samul_get_mid.wav',
-      low: 'sounds/samul/kkwaenggwari_samul_get_low.wav',
+      high: 'sounds/samul/kkwaenggwari_samul_gaek_high.wav',
+      mid: 'sounds/samul/kkwaenggwari_samul_gaek_mid.wav',
+      low: 'sounds/samul/kkwaenggwari_samul_gaek_low.wav',
     },
     45: {
       high: 'sounds/samul/kkwaenggwari_samul_gang_high.wav',
@@ -243,7 +243,7 @@ function loadKit(kitName) {
       document.querySelector('.top-left.pad')    .textContent = 'Buk (Hard)';
       document.querySelector('.top-right.pad')   .textContent = 'Jing';
       document.querySelector('.middle-left.pad') .textContent = 'Buk (Soft)';
-      document.querySelector('.middle-center.pad').textContent = 'Kkwaeng (Get)';
+      document.querySelector('.middle-center.pad').textContent = 'Kkwaeng (Gaek)';
       document.querySelector('.middle-right.pad').textContent = 'Kkwaeng (Gang)';
       document.querySelector('.bottom-left.pad') .textContent = 'Janggu (Kung L)';
       document.querySelector('.bottom-center.pad').textContent = 'Janggu (Kung R)';

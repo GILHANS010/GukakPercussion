@@ -22,7 +22,7 @@ Below are the eight pads used in both kits. Each pad corresponds to the same MID
 | Top-Left      | 49        | sounds/samul/buk_samul_hard_high.wav          | Buk (hard stroke)         |
 | Top-Right     | 51        | sounds/samul/jing_samul_high.wav              | Jing                      |
 | Middle-Left   | 46        | sounds/samul/buk_samul_soft_high.wav          | Buk (soft stroke)         |
-| Middle-Center | 47        | sounds/samul/kkwaenggwari_samul_get_high.wav  | Kkwaeng (“get” stroke)    |
+| Middle-Center | 47        | sounds/samul/kkwaenggwari_samul_get_high.wav  | Kkwaeng (“gaek” stroke)    |
 | Middle-Right  | 45        | sounds/samul/kkwaenggwari_samul_gang_high.wav | Kkwaeng (“gang” stroke)   |
 | Bottom-Left   | 38        | sounds/samul/janggu_samul_kung_high.wav       | Janggu (left-hand “kung”) |
 | Bottom-Center | 37        | sounds/samul/janggu_samul_rightkung_high.wav  | Janggu (right-hand “kung”)|
