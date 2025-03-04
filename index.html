@@ -26,11 +26,44 @@
 
   <!-- 키트 선택 (사물놀이/장단) -->
   <section id="kit-selector" class="kit-radio-wrapper">
-    <input type="radio" name="kitOption" id="kit-samul" value="samul" checked>
-    <label for="kit-samul" class="kit-card" id="samul-label">사물놀이 키트</label>
-    
-    <input type="radio" name="kitOption" id="kit-jangdan" value="jangdan">
-    <label for="kit-jangdan" class="kit-card" id="jangdan-label">장단 키트</label>
+
+    <div class="kit-group">
+      <h2>Drum Kits</h2>
+      <input type="radio" name="kitOption" id="big-drum" value="BigDrumKit" checked>
+      <label for="big-drum" class="kit-card" id="big-drum-label">Big Drum Kit</label>
+  
+      <input type="radio" name="kitOption" id="country-drum" value="CountryDrumKit">
+      <label for="country-drum" class="kit-card" id="country-drum-label">Country Drum Kit</label>
+  
+      <input type="radio" name="kitOption" id="hiphop-drum" value="HiphopDrumKit">
+      <label for="hiphop-drum" class="kit-card" id="hiphop-drum-label">Hiphop (Lofi) Drum Kit</label>
+  
+      <input type="radio" name="kitOption" id="house-drum" value="HouseDrumKit">
+      <label for="house-drum" class="kit-card" id="house-drum-label">House Drum Kit</label>
+  
+      <input type="radio" name="kitOption" id="jazz-drum" value="JazzDrumKit">
+      <label for="jazz-drum" class="kit-card" id="jazz-drum-label">Jazz Drum Kit</label>
+    </div>
+  
+    <!-- 퍼커션 키트 그룹 -->
+    <div class="kit-group">
+      <h2>Percussion Kits</h2>
+
+      <input type="radio" name="kitOption" id="kit-samul" value="samul" checked>
+      <label for="kit-samul" class="kit-card" id="samul-label">사물놀이 키트</label>
+      
+      <input type="radio" name="kitOption" id="kit-jangdan" value="jangdan">
+      <label for="kit-jangdan" class="kit-card" id="jangdan-label">장단 키트</label>
+
+      <input type="radio" name="kitOption" id="african-tribal" value="AfricanTribal">
+      <label for="african-tribal" class="kit-card" id="african-tribal-label">African Tribal</label>
+  
+      <input type="radio" name="kitOption" id="bossanova-latin" value="BossanovaLatin">
+      <label for="bossanova-latin" class="kit-card" id="bossanova-latin-label">Bossanova Latin</label>
+  
+      <input type="radio" name="kitOption" id="symphony-orchestra" value="SymphonyOrchestra">
+      <label for="symphony-orchestra" class="kit-card" id="symphony-orchestra-label">Symphony Orchestra</label>
+    </div>
   </section>
 
   <!-- 드럼 패드 컨테이너 -->
