@@ -87,32 +87,10 @@ function setLanguage(lang) {
 }
 
 /**************************************************************
- * (3) 초기 구동 및 언어 토글 버튼 설정
- **************************************************************/
-window.addEventListener('load', () => {
-  // 언어 초기화
-  setLanguage(currentLang);
-
-  // 로딩 화면 제거
-  const loadingScreen = document.getElementById('loading-screen');
-  setTimeout(() => {
-    loadingScreen?.classList.add('hidden');
-  }, 1000);
-  
-  // 기본(사물놀이) 키트 로드
-  loadKit('samul');
-});
-
-document.getElementById('lang-toggle').addEventListener('click', () => {
-  const newLang = (currentLang === 'ko') ? 'en' : 'ko';
-  setLanguage(newLang);
-  // ★ 만약 패드 이름까지 언어 전환한다면, loadKit(currentKit) 다시 호출
-  loadKit(currentKit);
-});
-
-/**************************************************************
  * (4) 사운드 맵 - 사물놀이 & 장단
  **************************************************************/
+
+
 const soundMap = {
   samul: {
     49: {
@@ -309,6 +287,9 @@ const soundMap = {
   // "pad bottom-right" data-note="43">
 
 let currentKit = 'samul'; // 현재 선택된 키트
+let audioBuffers = {};     // 오디오 버퍼를 저장할 객체 (미리 로딩된 사운드)
+
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
 /**************************************************************
  * (5) 라디오로 키트 선택
@@ -318,6 +299,7 @@ kitRadios.forEach((radio) => {
   radio.addEventListener('change', (ev) => {
     const selectedKit = ev.target.value; // 'samul' or 'jangdan'
     loadKit(selectedKit);
+    preloadSounds(selectedKit);  // ★ 키트 변경 시 사운드 미리 로드
   });
 });
 
@@ -398,14 +380,14 @@ function loadKit(kitName) {
   } else if (kitName === 'AfricanTribal') {
     // AfricanTribal 키트 -  기본 라벨 (Generic labels for now)
     if (currentLang === 'ko') {
-      document.querySelector('.top-left.pad').textContent    = '아고고 (Agogo)';
-      document.querySelector('.top-right.pad').textContent   = '우두 (Udu)';
-      document.querySelector('.middle-left.pad').textContent  = '카시시 (Caxixi)';
-      document.querySelector('.middle-center.pad').textContent= '콩가 (왼손) (Conga L)';    // Percussion 4 -> Djembe Kick (**Corrected Label**)
-      document.querySelector('.middle-right.pad').textContent = '콩가 (오른손) (Conga R)';
-      document.querySelector('.bottom-left.pad').textContent  = '젬베 힛 (Djembe Hit)';
-      document.querySelector('.bottom-center.pad').textContent= '젬베 킥 (Djembe Kick)';   // Percussion 7 -> Djembe Kick (Snare 보조) (**Label Redundant - Will be removed**)
-      document.querySelector('.bottom-right.pad').textContent = '토킹 드럼 (Talking D)';
+      document.querySelector('.top-left.pad').textContent    = '아고고';
+      document.querySelector('.top-right.pad').textContent   = '우두';
+      document.querySelector('.middle-left.pad').textContent  = '카시시';
+      document.querySelector('.middle-center.pad').textContent= '콩가 (왼손)';    // Percussion 4 -> Djembe Kick (**Corrected Label**)
+      document.querySelector('.middle-right.pad').textContent = '콩가 (오른손)';
+      document.querySelector('.bottom-left.pad').textContent  = '젬베 힛';
+      document.querySelector('.bottom-center.pad').textContent= '젬베 킥';   // Percussion 7 -> Djembe Kick (Snare 보조) (**Label Redundant - Will be removed**)
+      document.querySelector('.bottom-right.pad').textContent = '토킹 드럼';
     } else {
       document.querySelector('.top-left.pad').textContent    = 'Agogo';
       document.querySelector('.top-right.pad').textContent   = 'Udu';
@@ -444,7 +426,7 @@ function loadKit(kitName) {
       document.querySelector('.top-right.pad').textContent   = '트라이앵글';
       document.querySelector('.middle-left.pad').textContent  = '우드블록';
       document.querySelector('.middle-center.pad').textContent= '캐스터네츠';  // Tom High - Corrected to Castanets
-      document.querySelector('.middle-right.pad').textContent = '썰매방울';
+      document.querySelector('.middle-right.pad').textContent = '슬레이벨';
       document.querySelector('.bottom-left.pad').textContent  = '탬버린';
       document.querySelector('.bottom-center.pad').textContent= '큰북';
       document.querySelector('.bottom-right.pad').textContent = '팀파니';     // Tom Low - Corrected to Timpani
@@ -464,59 +446,134 @@ function loadKit(kitName) {
 /**************************************************************
  * (7) Web MIDI Access
  **************************************************************/
+// MIDI 입력 처리
+function handleMidiInput(message) {
+  const [command, note, velocity] = message.data;
+
+  if (command === 144 && velocity > 0) { // Note On
+    playSound(note, velocity);
+    // 패드 시각 효과
+    const pad = document.querySelector(`.pad[data-note="${note}"]`);
+    if(pad) {
+      pad.classList.add('active');
+      setTimeout(() => pad.classList.remove('active'), 100);
+    }
+
+  }
+}
+
+// MIDI 접근 요청
 if (navigator.requestMIDIAccess) {
-  navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure);
-} else {
-  alert('Web MIDI API를 지원하지 않는 브라우저입니다.');
+  navigator.requestMIDIAccess()
+    .then(onMIDISuccess, onMIDIFailure);
 }
 
 function onMIDISuccess(midiAccess) {
-  const inputs = midiAccess.inputs;
-  console.log('MIDI Access Successful');
-  inputs.forEach((input) => {
-    console.log(`- ${input.name}`);
-    input.onmidimessage = onMIDIMessage;
-  });
-}
-function onMIDIFailure() {
-  console.error('MIDI Access Failed');
-}
-function onMIDIMessage(msg) {
-  const [status, note, velocity] = msg.data;
-  console.log(`MIDI Message: status=${status}, note=${note}, velocity=${velocity}`);
-  if ((status & 0xF0) === 0x90 && velocity > 0) {
-    playSound(note, velocity);
-    highlightPad(note);
+  const inputs = midiAccess.inputs.values();
+  for (let input = inputs.next(); input && !input.done; input = inputs.next()) {
+    input.value.onmidimessage = handleMidiInput;
   }
+}
+
+function onMIDIFailure() {
+  console.warn('Could not access your MIDI devices.');
+}
+
+// 키보드 입력 처리 (기존 코드와 동일)
+document.addEventListener('keydown', (event) => {
+    const keyToNote = {
+      'z': 38, 'x': 37, 'c': 43,
+      'a': 46, 's': 47, 'd': 45,
+      'q': 49, 'e': 51
+    };
+    const note = keyToNote[event.key.toLowerCase()];
+    if (note) {
+        playSound(note, 80); // 키보드는 고정된 velocity 사용
+      // 패드 시각적 효과
+      const pad = document.querySelector(`.pad[data-note="${note}"]`);
+      if(pad){
+        pad.classList.add('active');
+        setTimeout(() => pad.classList.remove('active'), 100);
+      }
+    }
+});
+
+
+/**************************************************************
+ * (7) preloadSounds() - 지정된 키트에 대한 모든 사운드 미리 로드
+ **************************************************************/
+async function preloadSounds(kitName) { // async 함수로 변경
+  // 이미 로드된 사운드가 있으면 로딩 X
+  if (audioBuffers[kitName]) {
+    console.log(`Kit "${kitName}" already preloaded.`);
+    return;
+  }
+
+  audioBuffers[kitName] = {}; // 해당 키트에 대한 버퍼 객체 생성
+  const kitSounds = soundMap[kitName];
+
+  const promises = [];
+
+  for (let note in kitSounds) {
+    if (kitSounds.hasOwnProperty(note)) {
+      audioBuffers[kitName][note] = {}; // 각 노트별 버퍼 객체
+      for (let intensity in kitSounds[note]) {
+        if (kitSounds[note].hasOwnProperty(intensity)) {
+          const url = kitSounds[note][intensity];
+
+          // ★ Promise 생성 및 배열에 추가 (fetch 비동기 처리를 위해)
+          const promise = (async () => { // async 화살표 함수 사용
+            try {
+              const response = await fetch(url);
+              if (!response.ok) { //  HTTP 응답 상태 확인
+                  throw new Error(`HTTP error! status: ${response.status}`);
+              }
+              const arrayBuffer = await response.arrayBuffer();
+              const audioBuffer = await audioContext.decodeAudioData(arrayBuffer); // 전역 audioContext 사용
+              audioBuffers[kitName][note][intensity] = audioBuffer; // 로드된 버퍼 저장
+              console.log(`Loaded: ${url}`);
+            } catch (error) {
+              console.error(`Error loading or decoding sound: ${url}`, error);
+            }
+          })();
+          promises.push(promise);
+        }
+      }
+    }
+  }
+
+   // ★ 모든 프로미스가 완료될 때까지 기다림 (await 사용).
+  await Promise.all(promises);
+  console.log(`All sounds for kit "${kitName}" preloaded.`);
 }
 
 /**************************************************************
  * (8) 사운드 재생
  **************************************************************/
-function playSound(note, velocity = 127) {
-  const kitSounds = soundMap[currentKit];
-  const soundLayers = kitSounds[note];
-  if (!soundLayers) {
-    console.warn(`No sound mapped for note ${note} in kit '${currentKit}'`);
+function playSound(note, velocity) {
+  if (!audioBuffers[currentKit] || !audioBuffers[currentKit][note]) {
+    console.warn(`No sound loaded for note ${note} in kit ${currentKit}`);
     return;
   }
-  // velocity 레이어링 예시
-  // let soundFile = soundLayers.mid;
-  let soundFile;
-  if (velocity < 50) {
-    soundFile = soundLayers.low;
-  } else if (velocity < 100) {
-    soundFile = soundLayers.mid;
-  } else {
-    soundFile = soundLayers.high;
+
+  let intensity = 'mid';
+  if (velocity > 90) intensity = 'high';
+  else if (velocity < 60) intensity = 'low';
+
+  const buffer = audioBuffers[currentKit][note][intensity] || audioBuffers[currentKit][note]['mid'];
+
+  if (!buffer) {
+    console.warn(`No sound loaded for note ${note}, intensity ${intensity} in kit ${currentKit}`);
+    return;
   }
 
-  if (soundFile) {
-    const audio = new Audio(soundFile);
-    audio.volume = Math.max(0, Math.min(1, velocity / 127));
-    audio.play();
-  }
+  // ★ 전역 AudioContext 사용
+  const source = audioContext.createBufferSource();
+  source.buffer = buffer;
+  source.connect(audioContext.destination);
+  source.start(0);
 }
+
 
 /**************************************************************
  * (9) 패드 하이라이트
@@ -588,4 +645,29 @@ instructionButton.addEventListener('click', () => {
 closeButton.addEventListener('click', () => {
   instructionModal.classList.remove('active');
   instructionOverlay.classList.remove('active');
+});
+
+/**************************************************************
+ * (3) 초기 구동 및 언어 토글 버튼 설정
+ **************************************************************/
+window.addEventListener('load', () => {
+  // 언어 초기화
+  setLanguage(currentLang);
+
+  // 로딩 화면 제거 (기존 코드)
+  const loadingScreen = document.getElementById('loading-screen');
+  setTimeout(() => {
+    loadingScreen?.classList.add('hidden');
+  }, 1000);
+
+  // 기본(사물놀이) 키트 로드 및 사운드 미리 로드
+  loadKit('samul');       // UI (패드 텍스트)
+  preloadSounds('samul');  // ★★★★★ 초기 사운드 로딩 ★★★★★
+});
+
+document.getElementById('lang-toggle').addEventListener('click', () => {
+  const newLang = (currentLang === 'ko') ? 'en' : 'ko';
+  setLanguage(newLang);
+  // ★ 만약 패드 이름까지 언어 전환한다면, loadKit(currentKit) 다시 호출
+  loadKit(currentKit);
 });
