@@ -658,7 +658,7 @@ window.addEventListener('load', () => {
   const loadingScreen = document.getElementById('loading-screen');
   setTimeout(() => {
     loadingScreen?.classList.add('hidden');
-  }, 1000);
+  }, 100);
 
   // 기본(사물놀이) 키트 로드 및 사운드 미리 로드
   loadKit('samul');       // UI (패드 텍스트)
