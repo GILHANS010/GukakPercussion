@@ -262,6 +262,43 @@ const soundMap = {
     51: { high: 'sounds/DrumKit/JazzDrumKit/Ride_Hard.wav',       mid: 'sounds/DrumKit/JazzDrumKit/Ride_Moderate.wav',     low: 'sounds/DrumKit/JazzDrumKit/Ride_Soft.wav' }
   },
 
+  AfricanTribal: {
+    49: { high: 'sounds/Percussion/AfricanTribal/Agogo_Hard.wav',    mid: 'sounds/Percussion/AfricanTribal/Agogo_Moderate.wav', low: 'sounds/Percussion/AfricanTribal/Agogo_Soft.wav' },
+    42: { high: 'sounds/Percussion/AfricanTribal/Caxixi_Hard.wav',   mid: 'sounds/Percussion/AfricanTribal/Caxixi_Moderate.wav', low: 'sounds/Percussion/AfricanTribal/Caxixi_Soft.wav' },
+    44: { high: 'sounds/Percussion/AfricanTribal/Caxixi_Hard.wav',   mid: 'sounds/Percussion/AfricanTribal/Caxixi_Moderate.wav', low: 'sounds/Percussion/AfricanTribal/Caxixi_Soft.wav' },
+    46: { high: 'sounds/Percussion/AfricanTribal/Caxixi_Hard.wav',   mid: 'sounds/Percussion/AfricanTribal/Caxixi_Moderate.wav', low: 'sounds/Percussion/AfricanTribal/Caxixi_Soft.wav' },
+    37: { high: 'sounds/Percussion/AfricanTribal/Djembe_Kick_Hard.wav',       mid: 'sounds/Percussion/AfricanTribal/Djembe_Kick_Moderate.wav',     low: 'sounds/Percussion/AfricanTribal/Djembe_Kick_Soft.wav' },
+    38: { high: 'sounds/Percussion/AfricanTribal/Djembe_Hit_Hard.wav',      mid: 'sounds/Percussion/AfricanTribal/Djembe_Hit_Moderate.wav',    low: 'sounds/Percussion/AfricanTribal/Djembe_Hit_Soft.wav' },
+    47: { high: 'sounds/Percussion/AfricanTribal/Conga_Left_Hard.wav',    mid: 'sounds/Percussion/AfricanTribal/Conga_Left_Moderate.wav',  low: 'sounds/Percussion/AfricanTribal/Conga_Left_Soft.wav' },
+    43: { high: 'sounds/Percussion/AfricanTribal/TalkingDrum_Hard.wav',     mid: 'sounds/Percussion/AfricanTribal/TalkingDrum_Moderate.wav',   low: 'sounds/Percussion/AfricanTribal/TalkingDrum_Soft.wav' },
+    45: { high: 'sounds/Percussion/AfricanTribal/Conga_Right_Hard.wav',     mid: 'sounds/Percussion/AfricanTribal/Conga_Right_Moderate.wav',   low: 'sounds/Percussion/AfricanTribal/Conga_Right_Soft.wav' },
+    51: { high: 'sounds/Percussion/AfricanTribal/Udu_Hard.wav',       mid: 'sounds/Percussion/AfricanTribal/Udu_Moderate.wav',     low: 'sounds/Percussion/AfricanTribal/Udu_Soft.wav' }
+  },
+  BossanovaLatin: {
+    43: { high: 'sounds/Percussion/BossanovaLatin/Clap_Hard.wav',    mid: 'sounds/Percussion/BossanovaLatin/Clap_Moderate.wav', low: 'sounds/Percussion/BossanovaLatin/Clap_Soft.wav' },
+    42: { high: 'sounds/Percussion/BossanovaLatin/Shaker_Hard.wav',   mid: 'sounds/Percussion/BossanovaLatin/Shaker_Moderate.wav', low: 'sounds/Percussion/BossanovaLatin/Shaker_Soft.wav' },
+    44: { high: 'sounds/Percussion/BossanovaLatin/Shaker_Hard.wav',   mid: 'sounds/Percussion/BossanovaLatin/Shaker_Moderate.wav', low: 'sounds/Percussion/BossanovaLatin/Shaker_Soft.wav' },
+    46: { high: 'sounds/Percussion/BossanovaLatin/Shaker_Hard.wav',   mid: 'sounds/Percussion/BossanovaLatin/Shaker_Moderate.wav', low: 'sounds/Percussion/BossanovaLatin/Shaker_Soft.wav' },
+    37: { high: 'sounds/Percussion/BossanovaLatin/Cajon_Kick_Hard.wav',       mid: 'sounds/Percussion/BossanovaLatin/Cajon_Kick_Moderate.wav',     low: 'sounds/Percussion/BossanovaLatin/Cajon_Kick_Soft.wav' },
+    38: { high: 'sounds/Percussion/BossanovaLatin/Cajon_Hit_Hard.wav',      mid: 'sounds/Percussion/BossanovaLatin/Cajon_Hit_Moderate.wav',    low: 'sounds/Percussion/BossanovaLatin/Cajon_Hit_Soft.wav' },
+    49: { high: 'sounds/Percussion/BossanovaLatin/Cowbell_Hard.wav',    mid: 'sounds/Percussion/BossanovaLatin/Cowbell_Moderate.wav',  low: 'sounds/Percussion/BossanovaLatin/Cowbell_Soft.wav' },
+    47: { high: 'sounds/Percussion/BossanovaLatin/Quinto_Hit_Hard.wav',     mid: 'sounds/Percussion/BossanovaLatin/Quinto_Hit_Moderate.wav',   low: 'sounds/Percussion/BossanovaLatin/Quinto_Hit_Soft.wav' },
+    45: { high: 'sounds/Percussion/BossanovaLatin/Quinto_Kick_Hard.wav',     mid: 'sounds/Percussion/BossanovaLatin/Quinto_Kick_Moderate.wav',   low: 'sounds/Percussion/BossanovaLatin/Quinto_Kick_Soft.wav' },
+    51: { high: 'sounds/Percussion/BossanovaLatin/Claves_Hard.wav',       mid: 'sounds/Percussion/BossanovaLatin/Claves_Moderate.wav',     low: 'sounds/Percussion/BossanovaLatin/Claves_Soft.wav' }
+  },
+  SymphonyOrchestra: {
+    49: { high: 'sounds/Percussion/SymphonyOrchestra/Crash_Hard.wav',    mid: 'sounds/Percussion/SymphonyOrchestra/Crash_Moderate.wav', low: 'sounds/Percussion/SymphonyOrchestra/Crash_Soft.wav' },
+    51: { high: 'sounds/Percussion/SymphonyOrchestra/Triangle_Hard.wav',   mid: 'sounds/Percussion/SymphonyOrchestra/Triangle_Moderate.wav', low: 'sounds/Percussion/SymphonyOrchestra/Triangle_Soft.wav' },
+    42: { high: 'sounds/Percussion/SymphonyOrchestra/Woodblock_Hard.wav',   mid: 'sounds/Percussion/SymphonyOrchestra/Woodblock_Moderate.wav', low: 'sounds/Percussion/SymphonyOrchestra/Woodblock_Soft.wav' },
+    44: { high: 'sounds/Percussion/SymphonyOrchestra/Woodblock_Hard.wav',   mid: 'sounds/Percussion/SymphonyOrchestra/Woodblock_Moderate.wav', low: 'sounds/Percussion/SymphonyOrchestra/Woodblock_Soft.wav' },
+    46: { high: 'sounds/Percussion/SymphonyOrchestra/Woodblock_Hard.wav',   mid: 'sounds/Percussion/SymphonyOrchestra/Woodblock_Moderate.wav', low: 'sounds/Percussion/SymphonyOrchestra/Woodblock_Soft.wav' },
+    38: { high: 'sounds/Percussion/SymphonyOrchestra/Tambourine_Hard.wav',      mid: 'sounds/Percussion/SymphonyOrchestra/Tambourine_Moderate.wav',    low: 'sounds/Percussion/SymphonyOrchestra/Tambourine_Soft.wav' },
+    37: { high: 'sounds/Percussion/SymphonyOrchestra/BassDrum_Hard.wav',    mid: 'sounds/Percussion/SymphonyOrchestra/BassDrum_Moderate.wav',  low: 'sounds/Percussion/SymphonyOrchestra/BassDrum_Soft.wav' },
+    47: { high: 'sounds/Percussion/SymphonyOrchestra/Castanets_Hard.wav',   mid: 'sounds/Percussion/SymphonyOrchestra/Castanets_Moderate.wav', low: 'sounds/Percussion/SymphonyOrchestra/Castanets_Soft.wav' },
+    45: { high: 'sounds/Percussion/SymphonyOrchestra/SleighBell_Hard.wav',       mid: 'sounds/Percussion/SymphonyOrchestra/SleighBell_Moderate.wav',     low: 'sounds/Percussion/SymphonyOrchestra/SleighBell_Soft.wav' },
+    43: { high: 'sounds/Percussion/SymphonyOrchestra/Timpani_Hard.wav',     mid: 'sounds/Percussion/SymphonyOrchestra/Timpani_Moderate.wav',   low: 'sounds/Percussion/SymphonyOrchestra/Timpani_Soft.wav' },
+}};
+
   // "pad top-left" data-note="49">
   // "pad top-right" data-note="51">
   // "pad middle-left" data-note="46">
@@ -270,21 +307,6 @@ const soundMap = {
   // "pad bottom-left" data-note="38">
   // "pad bottom-center" data-note="37">
   // "pad bottom-right" data-note="43">
-
-  // 퍼커션 키트: 나중에 채워넣을 수 있도록 공간만 마련 (개발자가 파일명을 채워주세요)
-  AfricanTribal: {
-    // 예: pad 매핑 구조
-    // 49: { high: '', mid: '', low: '' },
-    // 51: { high: '', mid: '', low: '' },
-    // … 8개 패드에 해당하는 구조를 추가하세요.
-  },
-  BossanovaLatin: {
-    // 사용자가 채워넣을 공간
-  },
-  SymphonyOrchestra: {
-    // 사용자가 채워넣을 공간
-  }
-};
 
 let currentKit = 'samul'; // 현재 선택된 키트
 
@@ -353,7 +375,7 @@ function loadKit(kitName) {
     kitName === 'HouseDrumKit' ||
     kitName === 'JazzDrumKit'
   ) {
-    // 새로운 드럼 키트들
+    // 드럼 키트 종류
     if (currentLang === 'ko') {
       document.querySelector('.top-left.pad').textContent    = '크래쉬';
       document.querySelector('.top-right.pad').textContent   = '라이드';
@@ -373,30 +395,68 @@ function loadKit(kitName) {
       document.querySelector('.bottom-center.pad').textContent= 'Kick';
       document.querySelector('.bottom-right.pad').textContent = 'Tom Low';
     }
-  } else if (
-    kitName === 'AfricanTribal' ||
-    kitName === 'BossanovaLatin' ||
-    kitName === 'SymphonyOrchestra'
-  ) {
-    // 새로운 퍼커션 키트들 – 기본 라벨 (추후 필요 시 수정 가능)
+  } else if (kitName === 'AfricanTribal') {
+    // AfricanTribal 키트 -  기본 라벨 (Generic labels for now)
     if (currentLang === 'ko') {
-      document.querySelector('.top-left.pad').textContent    = '퍼커션1';
-      document.querySelector('.top-right.pad').textContent   = '퍼커션2';
-      document.querySelector('.middle-left.pad').textContent  = '퍼커션3';
-      document.querySelector('.middle-center.pad').textContent= '퍼커션4';
-      document.querySelector('.middle-right.pad').textContent = '퍼커션5';
-      document.querySelector('.bottom-left.pad').textContent  = '퍼커션6';
-      document.querySelector('.bottom-center.pad').textContent= '퍼커션7';
-      document.querySelector('.bottom-right.pad').textContent = '퍼커션8';
+      document.querySelector('.top-left.pad').textContent    = '아고고 (Agogo)';
+      document.querySelector('.top-right.pad').textContent   = '우두 (Udu)';
+      document.querySelector('.middle-left.pad').textContent  = '카시시 (Caxixi)';
+      document.querySelector('.middle-center.pad').textContent= '콩가 (왼손) (Conga L)';    // Percussion 4 -> Djembe Kick (**Corrected Label**)
+      document.querySelector('.middle-right.pad').textContent = '콩가 (오른손) (Conga R)';
+      document.querySelector('.bottom-left.pad').textContent  = '젬베 힛 (Djembe Hit)';
+      document.querySelector('.bottom-center.pad').textContent= '젬베 킥 (Djembe Kick)';   // Percussion 7 -> Djembe Kick (Snare 보조) (**Label Redundant - Will be removed**)
+      document.querySelector('.bottom-right.pad').textContent = '토킹 드럼 (Talking D)';
     } else {
-      document.querySelector('.top-left.pad').textContent    = 'Percussion 1';
-      document.querySelector('.top-right.pad').textContent   = 'Percussion 2';
-      document.querySelector('.middle-left.pad').textContent  = 'Percussion 3';
-      document.querySelector('.middle-center.pad').textContent= 'Percussion 4';
-      document.querySelector('.middle-right.pad').textContent = 'Percussion 5';
-      document.querySelector('.bottom-left.pad').textContent  = 'Percussion 6';
-      document.querySelector('.bottom-center.pad').textContent= 'Percussion 7';
-      document.querySelector('.bottom-right.pad').textContent = 'Percussion 8';
+      document.querySelector('.top-left.pad').textContent    = 'Agogo';
+      document.querySelector('.top-right.pad').textContent   = 'Udu';
+      document.querySelector('.middle-left.pad').textContent  = 'Caxixi';
+      document.querySelector('.middle-center.pad').textContent= 'Conga (Left)';         // Percussion 4 -> Djembe Kick (**Corrected Label**)
+      document.querySelector('.middle-right.pad').textContent = 'Conga (Right)';
+      document.querySelector('.bottom-left.pad').textContent  = 'Djembe Hit';
+      document.querySelector('.bottom-center.pad').textContent= 'Djembe Kick';         // Percussion 7 -> Djembe Kick (Snare Support)  (**Label Redundant - Will be removed**)
+      document.querySelector('.bottom-right.pad').textContent = 'Talking Drum';
+    }
+  } else if (kitName === 'BossanovaLatin') {
+    // BossanovaLatin 키트 -  맞춤 라벨
+    if (currentLang === 'ko') {
+      document.querySelector('.top-left.pad').textContent    = '카우벨';    // Crash - Corrected to Cowbell
+      document.querySelector('.top-right.pad').textContent   = '클라베스';  // Ride - Corrected to Claves
+      document.querySelector('.middle-left.pad').textContent  = '쉐이커';
+      document.querySelector('.middle-center.pad').textContent= '퀸토 힛';  // Tom High - Corrected to Quinto Hit
+      document.querySelector('.middle-right.pad').textContent = '퀸토 킥';  // Tom Mid - Corrected to Quinto Kick
+      document.querySelector('.bottom-left.pad').textContent  = '카혼 힛';  // Snare
+      document.querySelector('.bottom-center.pad').textContent= '카혼 킥';    // Kick
+      document.querySelector('.bottom-right.pad').textContent = '클랩';      // Tom Low - Corrected to Clap
+    } else {
+      document.querySelector('.top-left.pad').textContent    = 'Cowbell';     // Crash - Corrected to Cowbell
+      document.querySelector('.top-right.pad').textContent   = 'Claves';      // Ride - Corrected to Claves
+      document.querySelector('.middle-left.pad').textContent  = 'Shaker';
+      document.querySelector('.middle-center.pad').textContent= 'Quinto Hit'; // Tom High - Corrected to Quinto Hit
+      document.querySelector('.middle-right.pad').textContent = 'Quinto Kick'; // Tom Mid - Corrected to Quinto Kick
+      document.querySelector('.bottom-left.pad').textContent  = 'Cajon Hit';    // Snare
+      document.querySelector('.bottom-center.pad').textContent= 'Cajon Kick';   // Kick
+      document.querySelector('.bottom-right.pad').textContent = 'Clap';       // Tom Low - Corrected to Clap
+    }
+  } else if (kitName === 'SymphonyOrchestra') {
+    // SymphonyOrchestra 키트 -  수정된 맞춤 라벨 (Corrected Labels)
+    if (currentLang === 'ko') {
+      document.querySelector('.top-left.pad').textContent    = '크래쉬 심벌';
+      document.querySelector('.top-right.pad').textContent   = '트라이앵글';
+      document.querySelector('.middle-left.pad').textContent  = '우드블록';
+      document.querySelector('.middle-center.pad').textContent= '캐스터네츠';  // Tom High - Corrected to Castanets
+      document.querySelector('.middle-right.pad').textContent = '썰매방울';
+      document.querySelector('.bottom-left.pad').textContent  = '탬버린';
+      document.querySelector('.bottom-center.pad').textContent= '큰북';
+      document.querySelector('.bottom-right.pad').textContent = '팀파니';     // Tom Low - Corrected to Timpani
+    } else {
+      document.querySelector('.top-left.pad').textContent    = 'Crash Cymbal';
+      document.querySelector('.top-right.pad').textContent   = 'Triangle';
+      document.querySelector('.middle-left.pad').textContent  = 'Woodblock';
+      document.querySelector('.middle-center.pad').textContent= 'Castanets';    // Tom High - Corrected to Castanets
+      document.querySelector('.middle-right.pad').textContent = 'Sleigh Bells';
+      document.querySelector('.bottom-left.pad').textContent  = 'Tambourine';
+      document.querySelector('.bottom-center.pad').textContent= 'Bass Drum';
+      document.querySelector('.bottom-right.pad').textContent = 'Timpani';       // Tom Low - Corrected to Timpani
     }
   }
 }
