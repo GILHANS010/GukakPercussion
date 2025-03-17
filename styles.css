@@ -178,6 +178,16 @@
         bottom: 12%;
         right: 10%;
       }
+      
+      .left-bottom-pad {
+        left: -150px; /* 왼쪽 여백 조절 */
+        bottom: -100px; /* 아래 여백 조절 */
+      }
+      
+      .right-bottom-pad {
+        right: -150px; /* 오른쪽 여백 조절 */
+        bottom: -100px; /* 아래 여백 조절 */
+      }
   
       /* 사용법 모달 토글 버튼 */
       #instruction-toggle {
@@ -381,3 +391,4 @@
         66% { content: ".."; }
         100% { content: "..."; }
       }
+      
