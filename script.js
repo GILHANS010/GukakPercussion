@@ -192,10 +192,10 @@ const soundMap = {
 
   AfricanTribal: {
     36: { high: 'sounds/Percussion/AfricanTribal/Djembe_Kick_Hard.wav', mid: 'sounds/Percussion/AfricanTribal/Djembe_Kick_Moderate.wav', low: 'sounds/Percussion/AfricanTribal/Djembe_Kick_Soft.wav' },
-    37: { high:"", mid:"", low:""},
+    37: { high: 'sounds/Percussion/AfricanTribal/TalkingDrum_Hard.wav', mid: 'sounds/Percussion/AfricanTribal/TalkingDrum_Moderate.wav', low: 'sounds/Percussion/AfricanTribal/TalkingDrum_Soft.wav' },
     38: { high: 'sounds/Percussion/AfricanTribal/Djembe_Hit_Hard.wav', mid: 'sounds/Percussion/AfricanTribal/Djembe_Hit_Moderate.wav', low: 'sounds/Percussion/AfricanTribal/Djembe_Hit_Soft.wav' },
     42: { high: 'sounds/Percussion/AfricanTribal/Caxixi_Hard.wav', mid: 'sounds/Percussion/AfricanTribal/Caxixi_Moderate.wav', low: 'sounds/Percussion/AfricanTribal/Caxixi_Soft.wav' },
-    43: { high: 'sounds/Percussion/AfricanTribal/TalkingDrum_Hard.wav', mid: 'sounds/Percussion/AfricanTribal/TalkingDrum_Moderate.wav', low: 'sounds/Percussion/AfricanTribal/TalkingDrum_Soft.wav' },
+    43: { high: 'sounds/Percussion/AfricanTribal/FrameDrum_Hard.wav', mid: 'sounds/Percussion/AfricanTribal/FrameDrum_Moderate.wav', low: 'sounds/Percussion/AfricanTribal/FrameDrum_Soft.wav' },
     44: { high: 'sounds/Percussion/AfricanTribal/Caxixi_Hard.wav', mid: 'sounds/Percussion/AfricanTribal/Caxixi_Moderate.wav', low: 'sounds/Percussion/AfricanTribal/Caxixi_Soft.wav' },
     45: { high: 'sounds/Percussion/AfricanTribal/Conga_Right_Hard.wav', mid: 'sounds/Percussion/AfricanTribal/Conga_Right_Moderate.wav', low: 'sounds/Percussion/AfricanTribal/Conga_Right_Soft.wav' },
     46: { high: 'sounds/Percussion/AfricanTribal/Caxixi_Hard.wav', mid: 'sounds/Percussion/AfricanTribal/Caxixi_Moderate.wav', low: 'sounds/Percussion/AfricanTribal/Caxixi_Soft.wav' },
@@ -206,10 +206,10 @@ const soundMap = {
 
   BossanovaLatin: {
     36: { high: 'sounds/Percussion/BossanovaLatin/Cajon_Kick_Hard.wav', mid: 'sounds/Percussion/BossanovaLatin/Cajon_Kick_Moderate.wav', low: 'sounds/Percussion/BossanovaLatin/Cajon_Kick_Soft.wav' },
-    37: { high:"", mid:"", low:""},
+    37: { high: 'sounds/Percussion/BossanovaLatin/Clap_Hard.wav', mid: 'sounds/Percussion/BossanovaLatin/Clap_Moderate.wav', low: 'sounds/Percussion/BossanovaLatin/Clap_Soft.wav' },
     38: { high: 'sounds/Percussion/BossanovaLatin/Cajon_Hit_Hard.wav', mid: 'sounds/Percussion/BossanovaLatin/Cajon_Hit_Moderate.wav', low: 'sounds/Percussion/BossanovaLatin/Cajon_Hit_Soft.wav' },
     42: { high: 'sounds/Percussion/BossanovaLatin/Shaker_Hard.wav', mid: 'sounds/Percussion/BossanovaLatin/Shaker_Moderate.wav', low: 'sounds/Percussion/BossanovaLatin/Shaker_Soft.wav' },
-    43: { high: 'sounds/Percussion/BossanovaLatin/Clap_Hard.wav', mid: 'sounds/Percussion/BossanovaLatin/Clap_Moderate.wav', low: 'sounds/Percussion/BossanovaLatin/Clap_Soft.wav' },
+    43: { high: 'sounds/Percussion/BossanovaLatin/Guiro_Hard.wav', mid: 'sounds/Percussion/BossanovaLatin/Guiro_Moderate.wav', low: 'sounds/Percussion/BossanovaLatin/Guiro_Soft.wav' },
     44: { high: 'sounds/Percussion/BossanovaLatin/Shaker_Hard.wav', mid: 'sounds/Percussion/BossanovaLatin/Shaker_Moderate.wav', low: 'sounds/Percussion/BossanovaLatin/Shaker_Soft.wav' },
     45: { high: 'sounds/Percussion/BossanovaLatin/Quinto_Kick_Hard.wav', mid: 'sounds/Percussion/BossanovaLatin/Quinto_Kick_Moderate.wav', low: 'sounds/Percussion/BossanovaLatin/Quinto_Kick_Soft.wav' },
     46: { high: 'sounds/Percussion/BossanovaLatin/Shaker_Hard.wav', mid: 'sounds/Percussion/BossanovaLatin/Shaker_Moderate.wav', low: 'sounds/Percussion/BossanovaLatin/Shaker_Soft.wav' },
@@ -220,13 +220,13 @@ const soundMap = {
 
   SymphonyOrchestra: {
     36: { high: 'sounds/Percussion/SymphonyOrchestra/BassDrum_Hard.wav', mid: 'sounds/Percussion/SymphonyOrchestra/BassDrum_Moderate.wav', low: 'sounds/Percussion/SymphonyOrchestra/BassDrum_Soft.wav' },
-    37: { high:"", mid:"", low:""},
+    37: { high: 'sounds/Percussion/SymphonyOrchestra/Woodblock_Hard.wav', mid: 'sounds/Percussion/SymphonyOrchestra/Woodblock_Moderate.wav', low: 'sounds/Percussion/SymphonyOrchestra/Woodblock_Soft.wav' },
     38: { high: 'sounds/Percussion/SymphonyOrchestra/Tambourine_Hard.wav', mid: 'sounds/Percussion/SymphonyOrchestra/Tambourine_Moderate.wav', low: 'sounds/Percussion/SymphonyOrchestra/Tambourine_Soft.wav' },
-    42: { high: 'sounds/Percussion/SymphonyOrchestra/Woodblock_Hard.wav', mid: 'sounds/Percussion/SymphonyOrchestra/Woodblock_Moderate.wav', low: 'sounds/Percussion/SymphonyOrchestra/Woodblock_Soft.wav' },
+    42: { high: 'sounds/Percussion/SymphonyOrchestra/SleighBell_Hard.wav', mid: 'sounds/Percussion/SymphonyOrchestra/SleighBell_Moderate.wav', low: 'sounds/Percussion/SymphonyOrchestra/SleighBell_Soft.wav' },
     43: { high: 'sounds/Percussion/SymphonyOrchestra/Timpani_Hard.wav', mid: 'sounds/Percussion/SymphonyOrchestra/Timpani_Moderate.wav', low: 'sounds/Percussion/SymphonyOrchestra/Timpani_Soft.wav' },
-    44: { high: 'sounds/Percussion/SymphonyOrchestra/Woodblock_Hard.wav', mid: 'sounds/Percussion/SymphonyOrchestra/Woodblock_Moderate.wav', low: 'sounds/Percussion/SymphonyOrchestra/Woodblock_Soft.wav' },
-    45: { high: 'sounds/Percussion/SymphonyOrchestra/SleighBell_Hard.wav', mid: 'sounds/Percussion/SymphonyOrchestra/SleighBell_Moderate.wav', low: 'sounds/Percussion/SymphonyOrchestra/SleighBell_Soft.wav' },
-    46: { high: 'sounds/Percussion/SymphonyOrchestra/Woodblock_Hard.wav', mid: 'sounds/Percussion/SymphonyOrchestra/Woodblock_Moderate.wav', low: 'sounds/Percussion/SymphonyOrchestra/Woodblock_Soft.wav' },
+    44: { high: 'sounds/Percussion/SymphonyOrchestra/SleighBell_Hard.wav', mid: 'sounds/Percussion/SymphonyOrchestra/SleighBell_Moderate.wav', low: 'sounds/Percussion/SymphonyOrchestra/SleighBell_Soft.wav' },
+    45: { high: 'sounds/Percussion/SymphonyOrchestra/Chime_Hard.wav', mid: 'sounds/Percussion/SymphonyOrchestra/Chime_Moderate.wav', low: 'sounds/Percussion/SymphonyOrchestra/Chime_Soft.wav' },
+    46: { high: 'sounds/Percussion/SymphonyOrchestra/SleighBell_Hard.wav', mid: 'sounds/Percussion/SymphonyOrchestra/SleighBell_Moderate.wav', low: 'sounds/Percussion/SymphonyOrchestra/SleighBell_Soft.wav' },
     47: { high: 'sounds/Percussion/SymphonyOrchestra/Castanets_Hard.wav', mid: 'sounds/Percussion/SymphonyOrchestra/Castanets_Moderate.wav', low: 'sounds/Percussion/SymphonyOrchestra/Castanets_Soft.wav' },
     49: { high: 'sounds/Percussion/SymphonyOrchestra/Crash_Hard.wav', mid: 'sounds/Percussion/SymphonyOrchestra/Crash_Moderate.wav', low: 'sounds/Percussion/SymphonyOrchestra/Crash_Soft.wav' },
     51: { high: 'sounds/Percussion/SymphonyOrchestra/Triangle_Hard.wav', mid: 'sounds/Percussion/SymphonyOrchestra/Triangle_Moderate.wav', low: 'sounds/Percussion/SymphonyOrchestra/Triangle_Soft.wav' },
@@ -357,8 +357,8 @@ function loadKit(kitName) {
       document.querySelector('.middle-center.pad').textContent= '콩가 (왼손)';    
       document.querySelector('.middle-right.pad').textContent = '콩가 (오른손)';
       document.querySelector('.bottom-left.pad').textContent  = '젬베 힛';
-      document.querySelector('.bottom-center.pad').textContent= '';   
-      document.querySelector('.bottom-right.pad').textContent = '토킹 드럼';
+      document.querySelector('.bottom-center.pad').textContent= '토킹 드럼';   
+      document.querySelector('.bottom-right.pad').textContent = '프레임 드럼';
       document.querySelector('.left-bottom-pad').textContent= '카시시';
       document.querySelector('.right-bottom-pad').textContent = '젬베 킥';
     } else {
@@ -368,8 +368,8 @@ function loadKit(kitName) {
       document.querySelector('.middle-center.pad').textContent= 'Conga (Left)';        
       document.querySelector('.middle-right.pad').textContent = 'Conga (Right)';
       document.querySelector('.bottom-left.pad').textContent  = 'Djembe Hit';
-      document.querySelector('.bottom-center.pad').textContent= '';         
-      document.querySelector('.bottom-right.pad').textContent = 'Talking Drum';
+      document.querySelector('.bottom-center.pad').textContent= 'Talking Drum';         
+      document.querySelector('.bottom-right.pad').textContent = 'Frame Drum';
       document.querySelector('.left-bottom-pad').textContent= 'Caxixi';
       document.querySelector('.right-bottom-pad').textContent = 'Djembe Kick';
     }
@@ -382,8 +382,8 @@ function loadKit(kitName) {
       document.querySelector('.middle-center.pad').textContent= '퀸토 힛';
       document.querySelector('.middle-right.pad').textContent = '퀸토 킥';
       document.querySelector('.bottom-left.pad').textContent  = '카혼 힛';
-      document.querySelector('.bottom-center.pad').textContent= '';   
-      document.querySelector('.bottom-right.pad').textContent = '클랩';
+      document.querySelector('.bottom-center.pad').textContent= '클랩';   
+      document.querySelector('.bottom-right.pad').textContent = '구이로';
       document.querySelector('.left-bottom-pad').textContent= '쉐이커';
       document.querySelector('.right-bottom-pad').textContent = '카혼 킥';
     } else {
@@ -393,8 +393,8 @@ function loadKit(kitName) {
       document.querySelector('.middle-center.pad').textContent= 'Quinto Hit';
       document.querySelector('.middle-right.pad').textContent = 'Quinto Kick'; 
       document.querySelector('.bottom-left.pad').textContent  = 'Cajon Hit';
-      document.querySelector('.bottom-center.pad').textContent= '';
-      document.querySelector('.bottom-right.pad').textContent = 'Clap';
+      document.querySelector('.bottom-center.pad').textContent= 'Clap';
+      document.querySelector('.bottom-right.pad').textContent = 'Guiro';
       document.querySelector('.left-bottom-pad').textContent= 'Shaker';
       document.querySelector('.right-bottom-pad').textContent = 'Cajon Kick';
     }
@@ -403,24 +403,24 @@ function loadKit(kitName) {
     if (currentLang === 'ko') {
       document.querySelector('.top-left.pad').textContent    = '크래쉬 심벌';
       document.querySelector('.top-right.pad').textContent   = '트라이앵글';
-      document.querySelector('.middle-left.pad').textContent  = '우드블록';
+      document.querySelector('.middle-left.pad').textContent  = '슬레이벨';
       document.querySelector('.middle-center.pad').textContent= '캐스터네츠';
-      document.querySelector('.middle-right.pad').textContent = '슬레이벨';
+      document.querySelector('.middle-right.pad').textContent = '차임';
       document.querySelector('.bottom-left.pad').textContent  = '탬버린';
-      document.querySelector('.bottom-center.pad').textContent= '';
+      document.querySelector('.bottom-center.pad').textContent= '우드블록';
       document.querySelector('.bottom-right.pad').textContent = '팀파니';
-      document.querySelector('.left-bottom-pad').textContent= '왼쪽 페달';
+      document.querySelector('.left-bottom-pad').textContent= '슬레이벨';
       document.querySelector('.right-bottom-pad').textContent = '큰북';
     } else {
       document.querySelector('.top-left.pad').textContent    = 'Crash Cymbal';
       document.querySelector('.top-right.pad').textContent   = 'Triangle';
-      document.querySelector('.middle-left.pad').textContent  = 'Woodblock';
+      document.querySelector('.middle-left.pad').textContent  = 'Sleigh Bells';
       document.querySelector('.middle-center.pad').textContent= 'Castanets'; 
-      document.querySelector('.middle-right.pad').textContent = 'Sleigh Bells';
+      document.querySelector('.middle-right.pad').textContent = 'Chime';
       document.querySelector('.bottom-left.pad').textContent  = 'Tambourine';
-      document.querySelector('.bottom-center.pad').textContent= '';
+      document.querySelector('.bottom-center.pad').textContent= 'Woodblock';
       document.querySelector('.bottom-right.pad').textContent = 'Timpani';
-      document.querySelector('.left-bottom-pad').textContent= 'Left Pedal';
+      document.querySelector('.left-bottom-pad').textContent= 'Sleigh Bells';
       document.querySelector('.right-bottom-pad').textContent = 'Bass Drum';
     }
   }
