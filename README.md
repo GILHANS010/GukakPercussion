@@ -3,7 +3,7 @@
 This repository provides a set of **traditional Korean percussion instruments** (Samulnori and Jangdan) and various drum kits mapped to **specific MIDI note numbers**. This information is designed to help hardware MIDI percussion controller makers integrate and utilize these sounds. Detailed information on the sound mappings and velocity layer structure for each kit can be found below.
 
 > **Live Demo**
-> For a hands-on demonstration, visit **[GukakPercussion](https://gilhans010.github.io/GugakPercussion/)**. You can switch to Korean labels by clicking the “한국어” button in the top-right corner.
+> For a hands-on demonstration, visit **[GukakPercussion](https://gilhans010.github.io/GukakPercussion/)**. You can switch to Korean labels by clicking the “한국어” button in the top-right corner.
 
 ---
 
