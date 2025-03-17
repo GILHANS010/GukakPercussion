@@ -93,7 +93,7 @@ function setLanguage(lang) {
 
 const soundMap = {
   samul: {
-    36: { high:"", mid:"", low:""},
+    36: { high: 'sounds/samul/buk_samul_hard_high.wav', mid: 'sounds/samul/buk_samul_hard_mid.wav', low: 'sounds/samul/buk_samul_hard_low.wav' },
     37: { high: 'sounds/samul/janggu_samul_rightkung_high.wav', mid: 'sounds/samul/janggu_samul_rightkung_mid.wav', low: 'sounds/samul/janggu_samul_rightkung_low.wav' },
     38: { high: 'sounds/samul/janggu_samul_kung_high.wav', mid: 'sounds/samul/janggu_samul_kung_mid.wav', low: 'sounds/samul/janggu_samul_kung_low.wav' },
     42: { high: 'sounds/samul/buk_samul_soft_high.wav', mid: 'sounds/samul/buk_samul_soft_mid.wav', low: 'sounds/samul/buk_samul_soft_low.wav' },
@@ -107,7 +107,7 @@ const soundMap = {
   },
 
   jangdan: {
-    36: { high:"", mid:"", low:""},
+    36: { high: 'sounds/jangdan/buk_jangdan_lefthand_high.wav', mid: 'sounds/jangdan/buk_jangdan_lefthand_mid.wav', low: 'sounds/jangdan/buk_jangdan_lefthand_low.wav' },
     37: { high: 'sounds/jangdan/janggu_jangdan_duk_high.wav', mid: 'sounds/jangdan/janggu_jangdan_duk_mid.wav', low: 'sounds/jangdan/janggu_jangdan_duk_low.wav' },
     38: { high: 'sounds/jangdan/janggu_jangdan_kung_high.wav', mid: 'sounds/jangdan/janggu_jangdan_kung_mid.wav', low: 'sounds/jangdan/janggu_jangdan_kung_low.wav' },
     42: { high: 'sounds/jangdan/buk_jangdan_righthand_high.wav', mid: 'sounds/jangdan/buk_jangdan_righthand_mid.wav', low: 'sounds/jangdan/buk_jangdan_righthand_low.wav' },
@@ -122,7 +122,7 @@ const soundMap = {
 
   BigDrumKit: {
     36: { high: 'sounds/DrumKit/BigDrumKit/Kick_Hard.wav', mid: 'sounds/DrumKit/BigDrumKit/Kick_Moderate.wav', low: 'sounds/DrumKit/BigDrumKit/Kick_Soft.wav' },
-    37: { high:"", mid:"", low:""},
+    37: { high: 'sounds/DrumKit/BigDrumKit/Rimshot_Hard.wav', mid:'sounds/DrumKit/BigDrumKit/Rimshot_Moderate.wav', low:"sounds/DrumKit/BigDrumKit/Rimshot_Soft.wav"},
     38: { high: 'sounds/DrumKit/BigDrumKit/Snare_Hard.wav', mid: 'sounds/DrumKit/BigDrumKit/Snare_Moderate.wav', low: 'sounds/DrumKit/BigDrumKit/Snare_Soft.wav' },
     42: { high: 'sounds/DrumKit/BigDrumKit/HH_Close_Hard.wav', mid: 'sounds/DrumKit/BigDrumKit/HH_Close_Moderate.wav', low: 'sounds/DrumKit/BigDrumKit/HH_Close_Soft.wav' },
     43: { high: 'sounds/DrumKit/BigDrumKit/TomLow_Hard.wav', mid: 'sounds/DrumKit/BigDrumKit/TomLow_Moderate.wav', low: 'sounds/DrumKit/BigDrumKit/TomLow_Soft.wav' },
@@ -136,7 +136,7 @@ const soundMap = {
 
   CountryDrumKit: {
     36: { high: 'sounds/DrumKit/CountryDrumKit/Kick_Hard.wav', mid: 'sounds/DrumKit/CountryDrumKit/Kick_Moderate.wav', low: 'sounds/DrumKit/CountryDrumKit/Kick_Soft.wav' },
-    37: { high:"", mid:"", low:""},
+    37: { high: 'sounds/DrumKit/CountryDrumKit/Rimshot_Hard.wav', mid: 'sounds/DrumKit/CountryDrumKit/Rimshot_Moderate.wav', low: 'sounds/DrumKit/CountryDrumKit/Rimshot_Soft.wav' },
     38: { high: 'sounds/DrumKit/CountryDrumKit/Snare_Hard.wav', mid: 'sounds/DrumKit/CountryDrumKit/Snare_Moderate.wav', low: 'sounds/DrumKit/CountryDrumKit/Snare_Soft.wav' },
     42: { high: 'sounds/DrumKit/CountryDrumKit/HH_Close_Hard.wav', mid: 'sounds/DrumKit/CountryDrumKit/HH_Close_Moderate.wav', low: 'sounds/DrumKit/CountryDrumKit/HH_Close_Soft.wav' },
     43: { high: 'sounds/DrumKit/CountryDrumKit/TomLow_Hard.wav', mid: 'sounds/DrumKit/CountryDrumKit/TomLow_Moderate.wav', low: 'sounds/DrumKit/CountryDrumKit/TomLow_Soft.wav' },
@@ -150,7 +150,7 @@ const soundMap = {
 
   HiphopDrumKit: {
     36: { high: 'sounds/DrumKit/Hiphop(Lofi)DrumKit/Kick_Hard.wav', mid: 'sounds/DrumKit/Hiphop(Lofi)DrumKit/Kick_Moderate.wav', low: 'sounds/DrumKit/Hiphop(Lofi)DrumKit/Kick_Soft.wav' },
-    37: { high:"", mid:"", low:""},
+    37: { high: 'sounds/DrumKit/Hiphop(Lofi)DrumKit/Rimshot_Hard.wav', mid: 'sounds/DrumKit/Hiphop(Lofi)DrumKit/Rimshot_Moderate.wav', low: 'sounds/DrumKit/Hiphop(Lofi)DrumKit/Rimshot_Soft.wav' },
     38: { high: 'sounds/DrumKit/Hiphop(Lofi)DrumKit/Snare_Hard.wav', mid: 'sounds/DrumKit/Hiphop(Lofi)DrumKit/Snare_Moderate.wav', low: 'sounds/DrumKit/Hiphop(Lofi)DrumKit/Snare_Soft.wav' },
     42: { high: 'sounds/DrumKit/Hiphop(Lofi)DrumKit/HH_Close_Hard.wav', mid: 'sounds/DrumKit/Hiphop(Lofi)DrumKit/HH_Close_Moderate.wav', low: 'sounds/DrumKit/Hiphop(Lofi)DrumKit/HH_Close_Soft.wav' },
     43: { high: 'sounds/DrumKit/Hiphop(Lofi)DrumKit/TomLow_Hard.wav', mid: 'sounds/DrumKit/Hiphop(Lofi)DrumKit/TomLow_Moderate.wav', low: 'sounds/DrumKit/Hiphop(Lofi)DrumKit/TomLow_Soft.wav' },
@@ -164,7 +164,7 @@ const soundMap = {
 
   HouseDrumKit: {
     36: { high: 'sounds/DrumKit/HouseDrum/Kick.wav', mid: 'sounds/DrumKit/HouseDrum/Kick.wav', low: 'sounds/DrumKit/HouseDrum/Kick.wav' },
-    37: { high:"", mid:"", low:""},
+    37: { high: 'sounds/DrumKit/HouseDrum/Rimshot.wav', mid: 'sounds/DrumKit/HouseDrum/Rimshot.wav', low: 'sounds/DrumKit/HouseDrum/Rimshot.wav' },
     38: { high: 'sounds/DrumKit/HouseDrum/Snare.wav', mid: 'sounds/DrumKit/HouseDrum/Snare.wav', low: 'sounds/DrumKit/HouseDrum/Snare.wav' },
     42: { high: 'sounds/DrumKit/HouseDrum/HH_Close.wav', mid: 'sounds/DrumKit/HouseDrum/HH_Close.wav', low: 'sounds/DrumKit/HouseDrum/HH_Close.wav' },
     43: { high: 'sounds/DrumKit/HouseDrum/TomLow.wav', mid: 'sounds/DrumKit/HouseDrum/TomLow.wav', low: 'sounds/DrumKit/HouseDrum/TomLow.wav' },
@@ -178,7 +178,7 @@ const soundMap = {
 
   JazzDrumKit: {
     36: { high: 'sounds/DrumKit/JazzDrumKit/Kick_Hard.wav', mid: 'sounds/DrumKit/JazzDrumKit/Kick_Moderate.wav', low: 'sounds/DrumKit/JazzDrumKit/Kick_Soft.wav' },
-    37: { high:"", mid:"", low:""},
+    37: { high: 'sounds/DrumKit/JazzDrumKit/Rimshot_Hard.wav', mid: 'sounds/DrumKit/JazzDrumKit/Rimshot_Moderate.wav', low: 'sounds/DrumKit/JazzDrumKit/Rimshot_Soft.wav' },
     38: { high: 'sounds/DrumKit/JazzDrumKit/Snare_Hard.wav', mid: 'sounds/DrumKit/JazzDrumKit/Snare_Moderate.wav', low: 'sounds/DrumKit/JazzDrumKit/Snare_Soft.wav' },
     42: { high: 'sounds/DrumKit/JazzDrumKit/HH_Close_Hard.wav', mid: 'sounds/DrumKit/JazzDrumKit/HH_Close_Moderate.wav', low: 'sounds/DrumKit/JazzDrumKit/HH_Close_Soft.wav' },
     43: { high: 'sounds/DrumKit/JazzDrumKit/TomLow_Hard.wav', mid: 'sounds/DrumKit/JazzDrumKit/TomLow_Moderate.wav', low: 'sounds/DrumKit/JazzDrumKit/TomLow_Soft.wav' },
@@ -278,8 +278,8 @@ function loadKit(kitName) {
       document.querySelector('.bottom-left.pad').textContent  = '장구(쿵L)';
       document.querySelector('.bottom-center.pad').textContent= '장구(쿵R)';
       document.querySelector('.bottom-right.pad').textContent = '장구(덕)';
-      document.querySelector('.left-bottom-pad').textContent= '왼쪽 페달';
-      document.querySelector('.right-bottom-pad').textContent = '오른쪽 페달';
+      document.querySelector('.left-bottom-pad').textContent= '북(약)';
+      document.querySelector('.right-bottom-pad').textContent = '북(강)';
 
     } else {
       document.querySelector('.top-left.pad').textContent    = 'Buk (Hard)';
@@ -290,8 +290,8 @@ function loadKit(kitName) {
       document.querySelector('.bottom-left.pad').textContent  = 'Janggu (Kung L)';
       document.querySelector('.bottom-center.pad').textContent= 'Janggu (Kung R)';
       document.querySelector('.bottom-right.pad').textContent = 'Janggu (Duk)';
-      document.querySelector('.left-bottom-pad').textContent= 'Left Pedal';
-      document.querySelector('.right-bottom-pad').textContent = 'Right Pedal';
+      document.querySelector('.left-bottom-pad').textContent= 'Buk (Soft)';
+      document.querySelector('.right-bottom-pad').textContent = 'Buk (Hard)';
     }
   } else if (kitName === 'jangdan') {
     if (currentLang === 'ko') {
@@ -303,8 +303,8 @@ function loadKit(kitName) {
       document.querySelector('.bottom-left.pad').textContent  = '장구(쿵)';
       document.querySelector('.bottom-center.pad').textContent= '장구(덕)';
       document.querySelector('.bottom-right.pad').textContent = '장구(기덕)';
-      document.querySelector('.left-bottom-pad').textContent= '왼쪽 페달';
-      document.querySelector('.right-bottom-pad').textContent = '오른쪽 페달';
+      document.querySelector('.left-bottom-pad').textContent= '북(쿵R)';
+      document.querySelector('.right-bottom-pad').textContent = '북(쿵L)';
     } else {
       document.querySelector('.top-left.pad').textContent    = 'Buk (Kung L)';
       document.querySelector('.top-right.pad').textContent   = 'Janggu (Byunjuk)';
@@ -314,8 +314,8 @@ function loadKit(kitName) {
       document.querySelector('.bottom-left.pad').textContent  = 'Janggu (Kung)';
       document.querySelector('.bottom-center.pad').textContent= 'Janggu (Duk)';
       document.querySelector('.bottom-right.pad').textContent = 'Janggu (Giduk)';
-      document.querySelector('.left-bottom-pad').textContent= 'Left Pedal';
-      document.querySelector('.right-bottom-pad').textContent = 'Right Pedal';
+      document.querySelector('.left-bottom-pad').textContent= 'Buk (Kung R)';
+      document.querySelector('.right-bottom-pad').textContent = 'Buk (Kung L)';
     }
   } else if (
     kitName === 'BigDrumKit' ||
@@ -540,8 +540,8 @@ function playSound(note, velocity) {
   }
 
   let intensity = 'mid';
-  if (velocity > 90) intensity = 'high';
-  else if (velocity < 60) intensity = 'low';
+  if (velocity > 100) intensity = 'high';
+  else if (velocity < 50) intensity = 'low';
 
   const buffer = audioBuffers[currentKit][note][intensity] || audioBuffers[currentKit][note]['mid'];
 
@@ -550,10 +550,21 @@ function playSound(note, velocity) {
     return;
   }
 
-  // ★ 전역 AudioContext 사용
+  // Gain Node 생성
+  const gainNode = audioContext.createGain();
+
+  // velocity 값을 0에서 1 사이의 값으로 매핑 (볼륨 조절)
+  const gainValue = velocity / 127;
+  gainNode.gain.value = gainValue;
+
+  // 오디오 소스 생성 및 Gain Node에 연결
   const source = audioContext.createBufferSource();
   source.buffer = buffer;
-  source.connect(audioContext.destination);
+  source.connect(gainNode);
+
+  // Gain Node를 최종 목적지(스피커)에 연결
+  gainNode.connect(audioContext.destination);
+
   source.start(0);
 }
 
