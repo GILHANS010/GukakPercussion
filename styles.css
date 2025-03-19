@@ -180,13 +180,13 @@
       }
       
       .left-bottom-pad {
-        left: -150px; /* 왼쪽 여백 조절 */
-        bottom: -100px; /* 아래 여백 조절 */
+        left: -20%;
+        bottom: 5%;
       }
       
       .right-bottom-pad {
-        right: -150px; /* 오른쪽 여백 조절 */
-        bottom: -100px; /* 아래 여백 조절 */
+        right: -20%;
+        bottom: 5%;
       }
   
       /* 사용법 모달 토글 버튼 */
