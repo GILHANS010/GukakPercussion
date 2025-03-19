@@ -47,7 +47,7 @@ const translations = {
   }
 };
 
-let currentLang = 'ko'; // 초기 언어: 한국어
+let currentLang = 'en'; // 초기 언어: 한국어
 
 /**************************************************************
  * (2) setLanguage() - UI 문구 갱신
