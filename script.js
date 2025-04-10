@@ -90,7 +90,6 @@ function setLanguage(lang) {
  * (4) 사운드 맵 - 사물놀이 & 장단
  **************************************************************/
 
-
 const soundMap = {
   samul: {
     36: { high: 'sounds/Percussion/samul/buk_samul_hard_Hard.wav', mid: 'sounds/Percussion/samul/buk_samul_hard_Moderate.wav', low: 'sounds/Percussion/samul/buk_samul_hard_Soft.wav' },
