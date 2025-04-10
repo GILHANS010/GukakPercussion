@@ -430,38 +430,63 @@ function loadKit(kitName) {
  * (7) Web MIDI Access
  **************************************************************/
 // MIDI 입력 처리
-function handleMidiInput(message) {
-  const [command, note, velocity] = message.data;
-
-  if (command === 144 && velocity > 0) { // Note On
-    playSound(note, velocity);
-    // 패드 시각 효과
-    const pad = document.querySelector(`.pad[data-note="${note}"]`);
-    if(pad) {
-      pad.classList.add('active');
-      setTimeout(() => pad.classList.remove('active'), 100);
-    }
-
-  }
-}
+console.log('Checking for navigator.requestMIDIAccess...');
+console.log('navigator.requestMIDIAccess exists:', typeof navigator.requestMIDIAccess);
 
 // MIDI 접근 요청
 if (navigator.requestMIDIAccess) {
   navigator.requestMIDIAccess()
     .then(onMIDISuccess, onMIDIFailure);
+} else {
+  console.error('Web MIDI API (navigator.requestMIDIAccess) is NOT SUPPORTED in this browser.');
 }
 
 function onMIDISuccess(midiAccess) {
+  console.log('MIDI Access Success!', midiAccess); // MIDI 접근 성공 로그
   const inputs = midiAccess.inputs.values();
+  let foundDevice = false; // 장치 발견 여부 플래그
   for (let input = inputs.next(); input && !input.done; input = inputs.next()) {
+    console.log('Found MIDI Input:', input.value.name, input.value.id); // 발견된 장치 이름/ID 로그
     input.value.onmidimessage = handleMidiInput;
+    foundDevice = true;
+  }
+  if (!foundDevice) {
+      console.warn('MIDI Access Success, but no input devices found.'); // 장치를 찾지 못했을 경우 경고
   }
 }
 
-function onMIDIFailure() {
+function onMIDIFailure(msg) { // 실패 시 메시지도 출력하도록 수정
+  console.error('Failed to get MIDI access -', msg); // 에러 로그로 변경하고 메시지 포함
   console.warn('Could not access your MIDI devices.');
 }
 
+// MIDI 입력 처리
+function handleMidiInput(message) {
+  console.log('MIDI Message Received:', message.data); // 디버깅을 위해 로그 유지
+  const [command, note, velocity] = message.data;
+
+  // --- 수정된 부분 ---
+  // Note On 커맨드(144~159)이면서 velocity가 0보다 큰 경우 처리
+  // 로그에서 확인된 153번 커맨드를 명시적으로 추가 (또는 채널 1도 고려하여 144도 함께 확인)
+  if ((command === 153 || command === 144) && velocity > 0) {
+  // --- 수정 끝 ---
+
+    console.log(`Processing Note On: Command=${command}, Note=${note}, Velocity=${velocity}`); // 처리되는지 확인용 로그 추가
+    playSound(note, velocity);
+
+    // 패드 시각 효과
+    const pad = document.querySelector(`.pad[data-note="${note}"]`);
+    if (pad) {
+      pad.classList.add('active');
+      // 짧은 시간 후 active 클래스 제거
+      setTimeout(() => pad.classList.remove('active'), 100);
+    }
+  }
+  // 필요하다면 Note Off 메시지도 로그로 남길 수 있습니다.
+  // else if (command === 137 || command === 128 || (command >= 144 && command <= 159 && velocity === 0)) {
+  //   console.log(`Ignoring Note Off/Zero Velocity: Command=${command}, Note=${note}`);
+  // }
+}
 // 키보드 입력 처리 (기존 코드와 동일)
 document.addEventListener('keydown', (event) => {
     const keyToNote = {
@@ -514,7 +539,7 @@ async function preloadSounds(kitName) { // async 함수로 변경
               const arrayBuffer = await response.arrayBuffer();
               const audioBuffer = await audioContext.decodeAudioData(arrayBuffer); // 전역 audioContext 사용
               audioBuffers[kitName][note][intensity] = audioBuffer; // 로드된 버퍼 저장
-              console.log(`Loaded: ${url}`);
+              // console.log(`Loaded: ${url}`);
             } catch (error) {
               console.error(`Error loading or decoding sound: ${url}`, error);
             }
